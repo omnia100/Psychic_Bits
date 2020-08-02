@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="{% static 'psychicbits/home.css'%}">
+
+<h1>This is the home page</h1>
+
+</head>
+
+<body>
+{% for match in matches_list %}
+<li> <a href="/psychicbits/match{{match.id}}"> {{match.date}}  </a> 
+ 
+</li>
+{{match.HT}}
+{{match.AT}}
+{% endfor %}
+</body>
+
+</html>
