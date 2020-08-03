@@ -14,7 +14,7 @@ def matchList(request, pk):
     try:
         match = matchData.objects.get(pk=pk)
     except match.DoesNotExist:
-        return HttpResponseNotFound('<h1>no such</h1>')
+        return HttpResponseNotFound('<h1>no such ID</h1>')
 
     if request.method == 'GET':
         serializer = matchDataSerializer(match)
