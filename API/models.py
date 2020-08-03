@@ -8,7 +8,7 @@ class matchData(models.Model):
 	Referee =  models.CharField(max_length=20)
 	AttackRateH	= models.FloatField()
 	AttackRateA	= models.FloatField()
-	DefenceRate = models.FloatField()
+	DefenceRateH = models.FloatField()
 	DefenceRateA = models.FloatField()
 	DGH	= models.FloatField()
 	DGA	= models.FloatField()
