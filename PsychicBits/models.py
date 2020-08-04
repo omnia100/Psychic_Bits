@@ -33,3 +33,11 @@ class Match(models.Model):
     FTR = models.CharField('Full Time Result',max_length=1, blank=True) # H, A, D home,away,draw
 
 
+
+class teamLogo(models.Model):
+	team=models.CharField(max_length=20)
+	logo=models.ImageField(blank=True,null=True)
+
+	def __str__(self):
+
+		return self.team 

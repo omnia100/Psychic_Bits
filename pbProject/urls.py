@@ -22,4 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('psychicbits/', include('PsychicBits.urls')),
     path('psychicbits/', include('users.urls')),
+    path('',include('API.urls')),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
