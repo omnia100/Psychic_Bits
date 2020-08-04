@@ -1,1 +1,4 @@
-PsychicBits\standalonecode.py
+PsychicBits/__pycache__
+pbProject/__pycache__
+users/__pycache__
+.idea/
