@@ -8,7 +8,7 @@ from . serializers import matchDataSerializer
 
 
 
-
+"""
 @api_view(['GET'])
 def matchList(request, pk):
     try:
@@ -19,5 +19,16 @@ def matchList(request, pk):
     if request.method == 'GET':
         serializer = matchDataSerializer(match)
         return Response(serializer.data)
+"""
+
+
+
+@api_view(['GET'])
+def searchMatch(request , HomeTeam,AwayTeam):
+	match=matchData.objects.filter(HomeTeam__icontains=HomeTeam).filter(AwayTeam__icontains=AwayTeam)
+	serializer = matchDataSerializer(match,many=True)
+
+	return Response(serializer.data)
+
 
 
