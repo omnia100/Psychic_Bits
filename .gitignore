@@ -1,2 +1,5 @@
-PsychicBits\standalonecode.py
-.idea/workspace.xml
+PsychicBits/pycache
+pbProject/pycache
+users/pycache
+API/pycache
+.idea/
