@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+
+  <title>Psycic Bits</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/css/all.css' %}" rel="stylesheet"> <!--load all styles -->
+  <link rel="stylesheet"  href="css/stylesheet.min.css">
+  <link rel="stylesheet"  href="css/bootstrap.min.css">
+   
+   <!-- css -->
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700" rel="stylesheet">
+  <!--<link href="css/bootstrap-responsive.css" rel="stylesheet" />
+  <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
+  <link href="css/jcarousel.css" rel="stylesheet" />
+  <link href="css/flexslider.css" rel="stylesheet" />-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/css/all.css' %}" rel="stylesheet"> <!--load all styles -->
+  <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/scss/all.scss' %}" rel="stylesheet"> <!--load all styles -->
+   <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/scss/all.scss' %}" rel="stylesheet"> <!--load all styles -->
+    <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/js/all.js' %}" rel="stylesheet"> <!--load all styles -->
+    <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/js/all.js' %}" rel="stylesheet"> <!--load all styles -->
+    <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/js/all.js' %}" rel="stylesheet"> <!--load all styles -->
+
+  <link rel="stylesheet"  href="{% static 'psychicbits/css/all.css' %}">
+  <link id="bodybg" href="{% static 'psychicbits/bodybg/bg1.css' %}" rel="stylesheet" type="text/css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style type="text/css">
+   .model:: form:input[type=text],{
+  display:center block;
+  border: 1px solid gray;
+  border-radius: 14px;
+  box-sizing: border-box;
+  font-style:oblique;
+  font-family:cursive; 
+  color: #ab1a1a;
+
+}
+input[type=submit] {
+  
+  display:center block;
+  border-radius: 14px;
+  cursor: pointer;
+  font-style:oblique;
+}
+.sidebar {
+  height: 60%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 236px;
+  left: 0;
+  background-color: #222 ;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.sidebar a {
+  padding: 8px 6px 6px 14px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: lightgray;
+  display: block;
+}
+
+.w3-sidebar:: a:hover {
+  color: gray;
+   background-color: #ddd;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  padding: 10px 20px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 20px;}
+  .sidebar a {font-size: 18px;}
+}
+.navbar-collapse{
+  color: lightgray;
+
+}
+#d1{color: darkgray;}
+.dropdown-hover .dropdown-content {
+  display: block; 
+}
+#d1-content a:hover {
+  background-color: #ddd;}
+  @keyframes mymove {
+  from {left: 0px;}
+  to {left: 200px;}
+}
+h3::first-letter{
+  font-size: 200%;
+  color: black;}
+  .dropdown:hover .dropdown-menu {
+  display: block;
+}
+.h1{
+  letter-spacing: 100px; 
+}
+.collapse dropdown-menu:hover{ color: darkgray;display: block;  background-color: #ddd;}
+
+  .modal-header{
+      background-color: black;
+      color: lightgray;
+      height: 50%;
+      background-image: url("{% static 'psychicbits/10.jpg' %}"); 
+      font-size: 90px;
+    }
+    #myModal ,#mySignin ,#myReset{
+     background-image: url("{% static 'psychicbits/11.jpg' %}"); 
+      background-position: fill;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;  
+    }
+    form{
+                width: 100%;
+               height: 100%;
+               background-color: white;
+    }
+    .modal-footer{
+            background-image: url("{% static 'psychicbits/10.jpg' %}");
+             width: 100%;
+          
+    }
+    body{
+      background-image: url("{% static 'psychicbits/3.gif'%}");
+      background-size: 100% 100%;
+      background-position: fixed fill;
+      background-attachment: fixed;
+      background-repeat:repeat;
+    }
+  </style> 
+</head>
+<body>
+  <nav  class="navbar navbar-inverse navbar-top " id="nav1" role="navigation" style="margin-top: 20px;"> <!-- start of nav 1-->
+    <div class="container-fluid visible-lg-block" ><!-- start of cont 1 for lg block-->
+      <div class="row">                 <!-- start of row 1 in cont 1 -->
+        <div class="dropdown col-lg-1"> <!-- start of dropdown 10 users 1-->        
+         <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;">
+          Top 10 Users <i class="fas fa-trophy"></i> 
+         </button>
+         <ul class="dropdown-menu" role ="menu" style="color: white;background-color: white;">
+          <li><a class="dropdown-item-text " href="#">Just text 1</a></li>
+          <li><a class="dropdown-item-text" href="#">Just text 2</a></li>
+          <li><a class="dropdown-item-text" href="#">Just Text 3</a></li>
+          <li><a class="dropdown-item-text"href="#">Just Text 4</a></li>
+          <li><a class="dropdown-item-text" href="#">Just Text 5</a></li>
+          <li><a class="dropdown-item-text"href="#">Just Text 6</a></li>
+          <li><a class="dropdown-item-text" href="#">Just Text 7</a></li>
+          <li><a class="dropdown-item-text"href="#">Just Text 8</a></li>
+          <li><a class="dropdown-item-text" href="#">Just Text 9</a></li>
+          <li><a class="dropdown-item-text"href="#">Just Text 10</a></li>
+         </ul>
+        </div> <!-- end of dropdown 10 users 1-->
+        <div class="dropdown col-lg-1 col-lg-push-1"> <!-- start of dropdown 10 players 1-->
+         <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;">
+          Top 10 players <i class="fas fa-trophy"></i>
+         </button>
+          <div class="dropdown-menu"  style="color: white;background-color: white;">
+            <a class="dropdown-item-text " href="#">Just text 1</a>
+            <a class="dropdown-item-text" href="#">Just text 2</a>
+            <a class="dropdown-item-text" href="#">Just Text 3</a>
+            <a class="dropdown-item-text"href="#">Just Text 4</a>
+            <a class="dropdown-item-text" href="#">Just Text 5</a>
+            <a class="dropdown-item-text"href="#">Just Text 6</a>
+            <a class="dropdown-item-text" href="#">Just Text 7</a>
+            <a class="dropdown-item-text"href="#">Just Text 8</a>
+            <a class="dropdown-item-text" href="#">Just Text 9</a>
+            <a class="dropdown-item-text"href="#">Just Text 10</a>
+          </div>
+        </div> <!-- end of dropdown 10 players 1-->
+        <div class="col-lg-4 col-lg-push-3 visible-lg-block"><!-- start of title -->
+          <div class="w3-animate-fading">
+            <h1 style='margin-top: 0px; font-size: 50px;letter-spacing: 10px; color: white;font-family:"Comic Sans MS", cursive, serif; font-weight: bold; '>PSYChiC   BiTs</h1>
+          </div>
+        </div>
+
+        <div class="col-lg-1 col-lg-push-4 "> <!-- start of signup of lg con-->
+          <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#myModal" > <i class="fas fa-user-plus"></i> Sign Up</button>
+        </div>            <!-- end of signin of lg con-->
+        <div class="col-lg-1 col-lg-push-4">           <!-- start of signin of lg con-->
+            <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#mySignin" ><i class="fas fa-sign-in-alt"></i><a href="#mySignup"></a> Sign iN</button>
+        </div>  <!--end of signin of lg con-->
+      </div>  <!-- end of row 1 in cont 1-->
+
+    </div><!-- end of cont 1 for lg block-->
+<!--*************************************************************************** -->
+<!--***************************************************************************** -->
+    <div class="container-fluid visible-xs-block"> <!-- start of cont xs -->
+        
+        <div class=" col-xs-12 col-xs-push-0"><!-- start of name -->
+          <div class="w3-animate-fading">
+            <h1 style='font-size: 35px; color: white;font-family: "Comic Sans MS", cursive, serif; font-weight: bold; '>PSYChiC   BiTs</h1>
+          </div>
+        </div><!-- end of name -->
+        
+        <div class="row ">
+        <button class="navbar-toggle  pull-left" type="button " data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">  <!-- start button of collapse in con 2 xs -->
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+        </button><!-- end button of collapse in con 2 xs -->
+        <div class="collapse navbar-collapse "  id="navbarSupportedContent"> <!-- start of collapse in con 2 xs -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#myModal" > <i class="fas fa-user-plus"></i><a href="#mySignup"></a> Sign Up</button>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#mySignin" ><i class="fas fa-sign-in-alt"><a href="#mySignup"></a> Sign iN</i> </button> 
+            </li>
+            <li class="nav-item dropdown">
+              <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;">Top 10 Users <i class="fas fa-trophy"></i>
+              </button>
+              <div class="dropdown-menu w3-hoverable" style="color: white;background-color: white;">
+                <a class="dropdown-item-text " href="#">Just text 1</a>
+                <a class="dropdown-item-text" href="#">Just text 2</a>
+                <a class="dropdown-item-text" href="#">Just Text 3</a>
+                <a class="dropdown-item-text"href="#">Just Text 4</a>
+                <a class="dropdown-item-text" href="#">Just Text 5</a>
+                <a class="dropdown-item-text"href="#">Just Text 6</a>
+                <a class="dropdown-item-text" href="#">Just Text 7</a>
+                <a class="dropdown-item-text"href="#">Just Text 8</a>
+                <a class="dropdown-item-text" href="#">Just Text 9</a>
+                <a class="dropdown-item-text"href="#">Just Text 10</a>
+              </div>
+            </li><br>
+            <li class="nav-item dropdown">
+              <button type="button" class="btn btn-link dropdown-toggle " data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;">Top 10 players <i class="fas fa-trophy"></i>
+              </button>
+                <div class="dropdown-menu w3-hoverable" style="color: white;background-color: white;">
+                  <a class="dropdown-item-text " href="#">Just playerss 1</a>
+                  <a class="dropdown-item-text" href="#">Just text 2</a>
+                  <a class="dropdown-item-text" href="#">Just Text 3</a>
+                  <a class="dropdown-item-text"href="#">Just Text 4</a>
+                  <a class="dropdown-item-text" href="#">Just Text 5</a>
+                  <a class="dropdown-item-text"href="#">Just Text 6</a>
+                  <a class="dropdown-item-text" href="#">Just Text 7</a>
+                  <a class="dropdown-item-text"href="#">Just Text 8</a>
+                  <a class="dropdown-item-text" href="#">Just Text 9</a>
+                  <a class="dropdown-item-text"href="#">Just Text 10</a>
+                </div>
+            </li> 
+          </ul> 
+        </div>  <!-- end of collapse in con 2 xs -->
+        <div class="navbar "> <!-- start button 2 of collapse in con 2 xs -->
+          <button class="navbar-toggle pull-right" type="button" data-toggle="collapse" data-target="#sidbar" aria-controls="sidbar" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="icon-bar"> </span>
+            <span class="icon-bar"> </span>
+            <span class="icon-bar"> </span>
+          </button><!-- end button 2 of collapse in con 2 xs -->
+          <div class="collapse navbar-collapse "  id="sidbar">
+            <ul class="navbar-nav ">
+              <li class="active"><a href="#HOME PAGE 2.html"> <i class="fa fa-fw fa-home"></i> Home</a></li>
+              <li><a href="#services"><i class="fa fa-fw fa-user"></i> My Profile</a></li>
+              <li><a href="#clients"><i class="fa fa-fw fa-chart-area"></i>  Analysis </a></li>
+              <li><a href="#contact"><i class="fa fa-fw fa-chart-pie"></i>  Statistics </a></li>
+              <li>
+                <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;font-size:10px;"><i class="fas fa-futbol" style="font-size: 15px; color:#222 ;"></i>  Results
+                </button>
+                <div class="dropdown-menu" style="color: black;background-color: lightgray; font-size:8px;width: 15px">
+                  <a class="dropdown-item-text"href="#"><h6>Pre Matches</h6></a>
+                  <a class="dropdown-item-text" href="/.html"><h6> Next Matches</h6></a>
+                </div><!-- end of dropdown results 1-->
+              </li>
+            </ul>
+          </div> </div>
+        </div>
+     </div>
+    </div><!-- end of cont xs -->
+<!--*************************************************************************** -->
+<!--***************************************************************************** -->
+    <div class="container-fluid visible-md-block visible-sm-block "> <!-- start of cont sm-md -->
+      <div class="row"><!-- start of row 1 in sm md cont -->
+        <div class="dropdown col-sm-1 col-sm-push-0"> <!-- start of dropdown 10 users 1 in sm md cont-->
+          <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;">Top 10 Users <i class="fas fa-trophy"></i>
+          </button>
+          <div class="dropdown-menu"  style="color: white;background-color: white;">
+            <a class="dropdown-item-text " href="#">Just text 1</a>
+            <a class="dropdown-item-text" href="#">Just text 2</a>
+            <a class="dropdown-item-text" href="#">Just Text 3</a>
+            <a class="dropdown-item-text"href="#">Just Text 4</a>
+            <a class="dropdown-item-text" href="#">Just Text 5</a>
+            <a class="dropdown-item-text"href="#">Just Text 6</a>
+            <a class="dropdown-item-text" href="#">Just Text 7</a>
+            <a class="dropdown-item-text"href="#">Just Text 8</a>
+            <a class="dropdown-item-text" href="#">Just Text 9</a>
+            <a class="dropdown-item-text"href="#">Just Text 10</a>
+          </div>
+        </div> <!-- end of dropdown 10 users 1 in sm md cont-->
+        <div class="dropdown col-sm-1 col-sm-push-2"> <!-- start of dropdown 10 players 1-->
+          <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;">
+            Top 10 players <i class="fas fa-trophy"></i>
+          </button>
+          <div class="dropdown-menu"  style="color: white;background-color: white;">
+            <a class="dropdown-item-text " href="#">Just text 1</a>
+            <a class="dropdown-item-text" href="#">Just text 2</a>
+            <a class="dropdown-item-text" href="#">Just Text 3</a>
+            <a class="dropdown-item-text"href="#">Just Text 4</a>
+            <a class="dropdown-item-text" href="#">Just Text 5</a>
+            <a class="dropdown-item-text"href="#">Just Text 6</a>
+            <a class="dropdown-item-text" href="#">Just Text 7</a>
+            <a class="dropdown-item-text"href="#">Just Text 8</a>
+            <a class="dropdown-item-text" href="#">Just Text 9</a>
+            <a class="dropdown-item-text"href="#">Just Text 10</a>
+          </div>
+        </div> <!-- end of dropdown 10 players 1-->
+        <div class="col-sm-1 col-sm-push-6">
+          <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#myModal" > <i class="fas fa-user-plus"></i> Sign Up</button>
+        </div>
+        <div class="col-sm-1 col-sm-push-7">
+          <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#mySignin" ><i class="fas fa-sign-in-alt"></i><a href="#mySignup"></a> Sign iN</button>
+        </div>
+      </div>  <!-- end of row 1 in sm md cont-->
+      <div class="row"> <!-- start of row 2 in sm md cont-->
+        
+        <div class="col-sm-9"><!-- start of title -->
+          <div class="w3-animate-fading">
+            <h1 style='font-size: 70px; color: white;font-family: "Comic Sans MS", cursive, serif; font-weight: bold; '>PSYChiC   BiTs</h1>
+          </div>
+        </div><!-- end of title -->
+      </div><!-- end of row 2-->
+    </div><!-- end of cont sm-md -->
+    <!--*************************************************************************** -->
+<!--***************************************************************************** -->
+  <!--  <div class="container-fluid  visible-sm-block">  start of cont sm-md ->
+      <div class="row"><!-- start of row 1 in sm md cont ->
+        <div class="dropdown col-sm-1 col-sm-push-0"> <!-- start of dropdown 10 users 1 in sm md cont->
+          <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;">Top 10 Users <i class="fas fa-trophy"></i>
+          </button>
+          <div class="dropdown-menu"  style="color: white;background-color: white;">
+            <a class="dropdown-item-text " href="#">Just text 1</a>
+            <a class="dropdown-item-text" href="#">Just text 2</a>
+            <a class="dropdown-item-text" href="#">Just Text 3</a>
+            <a class="dropdown-item-text"href="#">Just Text 4</a>
+            <a class="dropdown-item-text" href="#">Just Text 5</a>
+            <a class="dropdown-item-text"href="#">Just Text 6</a>
+            <a class="dropdown-item-text" href="#">Just Text 7</a>
+            <a class="dropdown-item-text"href="#">Just Text 8</a>
+            <a class="dropdown-item-text" href="#">Just Text 9</a>
+            <a class="dropdown-item-text"href="#">Just Text 10</a>
+          </div>
+        </div> <!-- end of dropdown 10 users 1 in sm md cont->
+        <div class="dropdown col-sm-1 col-sm-push-2"> <!-- start of dropdown 10 players 1->
+          <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;">
+            Top 10 players <i class="fas fa-trophy"></i>
+          </button>
+          <div class="dropdown-menu"  style="color: white;background-color: white;">
+            <a class="dropdown-item-text " href="#">Just text 1</a>
+            <a class="dropdown-item-text" href="#">Just text 2</a>
+            <a class="dropdown-item-text" href="#">Just Text 3</a>
+            <a class="dropdown-item-text"href="#">Just Text 4</a>
+            <a class="dropdown-item-text" href="#">Just Text 5</a>
+            <a class="dropdown-item-text"href="#">Just Text 6</a>
+            <a class="dropdown-item-text" href="#">Just Text 7</a>
+            <a class="dropdown-item-text"href="#">Just Text 8</a>
+            <a class="dropdown-item-text" href="#">Just Text 9</a>
+            <a class="dropdown-item-text"href="#">Just Text 10</a>
+          </div>
+        </div> <!-- end of dropdown 10 players 1->
+        <div class="col-sm-1 col-sm-push-6">
+          <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#myModal" > <i class="fas fa-user-plus"></i> Sign Up</button>
+        </div>
+        <div class="col-sm-1 col-sm-push-7">
+          <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#mySignin" ><i class="fas fa-sign-in-alt"></i><a href="#mySignup"></a> Sign iN</button>
+        </div>
+      </div>  <!-- end of row 1 in sm md cont->
+      <div class="row"> <!-- start of row 2 in sm md cont->
+        
+        <div class="col-sm-10 col-sm-push-0"><!-- start of title ->
+          <div class="w3-animate-fading">
+            <h1 style='font-size: 70px; color: white;font-family: "Georgia", serif; font-weight: bold; '><b>PSYChiC   BiTs</b></h1>
+          </div>
+        </div><!-- end of title ->
+      </div><!-- end of row 2->
+    </div><!-- end of cont sm-md -->
+<!--***************************************************************************** -->
+<!--***************************************************************************** -->
+    <div class="modal fade" id="myModal" role="dialog"> <!--Sign Up Modal -->
+      <div class="modal-dialog">
+        <div class="modal-content"><!-- Sign Up content-->
+          <div class="modal-header ">
+            <h3 class="modal-title col-xs-7 col-sm-push-0">Sign Up Form</h3>
+              <button type="button" class="close" data-dismiss="modal"><i class="fas fa-window-close" style="color:white; font-size:30px;"></i></button>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal" action="/action_page.php" style="font-family: 'Comic Sans MS', cursive,serif;">
+              <div class="form-group">
+                <label class="control-label col-sm-4 col-xs-5" for="inputEmail" style="font-family: 'Comic Sans MS', cursive,serif;">Email</label>
+                <input type="email"  id="inputEmail" class="control-group"placeholder="Email" style=" border-radius: 7px;font-style:oblique;">
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-4 col-xs-5" for="name">Name</label>
+                <input type="text" id="name" placeholder="Name.." class="control-group" style=" border-radius: 7px;font-style:oblique;">
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-4 col-xs-5" for="Favourite">Favourite Team</label>
+                <input type="text" id="Favorite" placeholder="Favorite Team.."class="control-group"style=" border-radius: 7px;font-style:oblique;">
+              </div>
+              <div class="form-group" >
+                <label class="control-label col-sm-4 col-xs-5" for="phonnum" >Phone Number</label>
+                <input type="text" id="phonnum" placeholder="Phone Number.." class="control-group"style=" border-radius: 7px;font-style:oblique;">
+              </div> 
+              <div class="form-group">
+                <label class="control-label col-sm-4 col-xs-5" for="pws">Password</label>
+                <input type="password" id="pws" placeholder="Password.." class="control-group"style=" border-radius: 7px;font-style:oblique;">
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-4 col-xs-5" for="inputSignupPassword2">Confirm Password</label>
+                <input type="password" id="inputSignupPassword2" placeholder="Password.." class="control-group"style=" border-radius: 7px;font-style:oblique;">
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-danger col-xs-2 col-sm-push-4 col-xs-push-6">Sign up</button> <br><br>
+                  <h4 class="aligncenter margintop20 col-sm-6 col-sm-push-1">Already have an account? <a href="#mySignin" data-dismiss="modal" aria-hidden="true" data-toggle="modal">Sign in</a>
+                  </h4>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer"><!-- start of footer-->
+            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+          </div><!-- end of footer-->
+        </div><!-- end of Sign Up content-->
+      </div>
+    </div><!-- end of sign up model-->
+<!--***************************************************************************** -->
+<!--***************************************************************************** -->
+    <div class="modal fade" id="mySignin" role="dialog"><!-- start Sign in Modal -->
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header"><!-- start Modal header -->
+            <h3 class="modal-title col-xs-7 col-sm-push-0">Sign in Form</h3>
+            <button type="button" class="close" data-dismiss="modal"><i class="fas fa-window-close" style="color:white; font-size:30px;"></i></button>
+          </div><!-- end Modal header -->
+          <div class="modal-body"><!-- start Modal body -->
+            <form class="form-horizontal" style="font-family: 'Comic Sans MS', cursive,serif;">
+              <div class="form-group ">
+                <label class="control-label col-xs-3 " for="inputText">Username</label>
+                <input type="text" id="inputText" placeholder="Username.." class="control-group "style=" border-radius: 7px;font-style:oblique;">
+              </div>
+              <div class="form-group">
+                <label class="control-label col-xs-3" for="inputSigninPassword">Password</label>
+                <input type="password" id="inputSigninPassword" placeholder="Password.." class="control-group "style=" border-radius: 7px;font-style:oblique;">
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-danger col-xs-2 col-xs-push-3">Sign in</button>
+                  <p class="aligncenter margintop20 col-xs-5 col-xs-push-3">Forgot password? <a href="#myReset" data-dismiss="modal" aria-hidden="true" data-toggle="modal">Reset</a>
+                  </p>
+              </div>
+            </form>
+          </div><!-- end Modal body -->
+          <div class="modal-footer"> <!-- start Modal footer -->
+            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+          </div><!-- end Modal footer -->
+        </div>
+      </div>  
+    </div><!-- end signin modal -->
+<!--*************************************************************************** -->
+<!--***************************************************************************** -->
+    <div class="modal fade" id="myReset" role="dialog"> <!--start Reset Modal -->
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header"><!--start Reset Modal header-->
+            <button type="button" class="close" data-dismiss="modal"><i class="fas fa-window-close" style="color:white; font-size:30px;"></i></button>
+          </div>  <!--start Reset Modal header-->
+          <div class="modal-body" style="background-color: white;">
+            <form class="form-horizontal" style="font-family: 'Comic Sans MS', cursive,serif;">
+              <div class="form-group">
+                <label class="control-label col-xs-2" for="inputResetEmail">Email</label>
+                <input type="email" id="inputResetEmail" placeholder="Email.." class="control-group"style=" border-radius: 7px;font-style:oblique;">
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-danger col-xs-3 col-xs-push-2">Reset password</button><br><br>
+                <p class="aligncenter margintop20 col-sm-10 col-sm-push-1">We will send instructions on how to reset your password to your inbox</p>
+              </div>
+            </form>
+          </div>  
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div><!-- end reset modal -->
+  </nav><!-- end of nav 1--> 
+  
+       
+<!--*************************************************************************** -->
+<!--***************************************************************************** -->
+  <div class="w3-sidebar w3-bar-block w3-animate-left hidden-xs col-sm-2" style=" color: black; font-weight: bold; display:none;z-index:5 " id="mySidebar">
+    <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+    <a href="#HOME PAGE 2.html" style="font-size: 25px; color:#111 ;" class="active"> <i class="fa fa-fw fa-home" ></i> Home</a><br>
+    <a href="/psychicbits/user/{{user.id}}" style="font-size: 25px; color:#111 ;"><i class="fa fa-fw fa-user" ></i> My Profile</a><br>
+    <a href="#clients" style="font-size: 25px; color:#111 ;"><i class="fa fa-fw fa-chart-area" ></i>  Analysis </a><br>
+    <a href="#contact" style="font-size: 25px; color:#111 ;"><i class="fa fa-fw fa-chart-pie" ></i>  Statistics </a><br>
+    <div class="dropdown col-sm-1 "> <!-- start of dropdown results 1-->
+      <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;font-size:20px;"><i class="fas fa-futbol" style="font-size: 25px; color:#111 ;"></i>  Results
+      </button>
+      <div class="dropdown-menu"  style="color: black;background-color: darkgray; font-size:3px;">
+        <a class="dropdown-item-text"href=""><h6>Pre Matches</h6></a>
+        <a class="dropdown-item-text" href="/psychicbits"><h6> Next Matches</h6></a>
+      </div>
+    </div> <!-- end of dropdown results 1-->
+  </div> <!-- end of sidebar -->
+<!--*************************************************************************** -->
+<!--***************************************************************************** -->
+  <div class="w3-overlay w3-animate-opacity hidden-xs" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div><!-- sidebar Content -->
+  <div><button class="w3-button w3-white w3-xxlarge hidden-xs" onclick="w3_open()">&#9776;</button></div>
+  <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+   <!-- <div class="container"> start of text-->
+  <div class="col-sm-push-5 col-sm-push-0">
+  <!--***************************-->
+    
+ <!--<div class="col-lg-9 col-lg-push-3 visible-lg-block"><!-- start of title ->
+          <div class="w3-animate-fading">
+            <h1 style='margin-top: 0px; font-size: 80px;letter-spacing: 10px; color: black;font-family:"Comic Sans MS", cursive, serif; font-weight: bold; '>PSYChiC   BiTs</h1>
+          </div>
+        </div>-->
+</div>
+<div class="col-sm-7 col-sm-push-1 col-xs-12" style="padding-top: 80px; margin-bottom:150px; ">
+         <a style="color: white; font-size: 35px;"><b> Are You Ready For The challenge?</b><div id="div1" class="fa" style="font-size: 45px; color: black;"></div></a>
+
+       <h3 style="color: white; font-size: 30px;"><b>
+          you can guess which team will win the next match with Us & if you win     
+              you will take a score and Be ONE of the Top 10 users</b>
+       </h3>
+             <button class="btn btn-lights w3-animate-fading"style=" width: 200px;
+              height: 50px;
+              background: darkgray;
+              position: relative;
+              animation: mymove 5s infinite;
+              font-size: 25px; color:#222 ;font-weight: bold;"><i class="fas fa-heart" style="font-size: 25px; color:#00008B ;"></i>Challenge Us </button>
+              
+    </div>
+
+ 
+  <div class="navbar navbar-inverse navbar-fixed-bottom" style="height: 15px;"> <!-- start of footer-->
+    <div class="container"> 
+      <div class="navbar-text pull-left">
+        <p> copyright psycicbits 2020</p>
+      </div>
+      <div class="navbar-text pull-right">
+        <a href="#"><i class="fab fa-facebook-square" style="color: white;font-size: 30px; padding: 0px 0px 0px 0px; margin: 0px 0px;"></i> </a>
+        <a href="#"><i class="fab fa-twitter-square" style="color: white;font-size: 30px;"></i></a>
+        <a href="#"><i class="fab fa-google-plus-square" style="color: white;font-size: 30px;"></i></a>
+        <a href="#"><i class="fab fa-instagram-square" style="color: white;font-size: 30px;"></i></a>
+      </div>
+    </div>
+  </div> <!-- end of footer-->
+  
+            
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/all.js"></script>
+
+  <script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+<script>
+function hourglass() {
+  var a ,b ,c;
+  a = document.getElementById("div1");
+  
+  a.innerHTML = "&#xf251;";
+  setTimeout(function () {
+      a.innerHTML = "&#xf252;";
+    }, 1000);
+  setTimeout(function () {
+      a.innerHTML = "&#xf253;";
+    }, 2000);
+  
+}
+hourglass();
+setInterval(hourglass, 3000);
+</script>
+</body>
+
+</html>
