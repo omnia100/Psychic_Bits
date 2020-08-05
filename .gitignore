@@ -1,5 +1,5 @@
-PsychicBits/pycache
-pbProject/pycache
-users/pycache
-API/pycache
+PsychicBits/__pycache__
+pbProject/__pycache__
+users/__pycache__
+API/__pycache__
 .idea/
