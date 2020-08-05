@@ -3,21 +3,78 @@
 {% load static %}
 
 <head>
-
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
 <link rel="stylesheet" type="text/css" href="{% static 'psychicbits/home.css'%}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<h1>This is the home page</h1>
-
+<h1></h1>
+<style>
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 40%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 3px solid black;
+  margin-bottom: 12px;
+  margin-left: 30%;
+}
+</style>
 </head>
 
 <body>
+	<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Team.." title="Type in a name">
+
+	<table  id="t01"class="table table-dark table-hover" style="background-color:;width: 80%; margin-left:10%;">
+    <tr>
+        <th>Time </th>
+        <th>Home Team</th>
+        <th>Away Team</th>
+        <th>Prediction</th>
+    </tr>
 {% for match in matches_list %}
-<li> <a href="/psychicbits/match{{match.id}}"> {{match.date}}  </a> 
- 
-</li>
-{{match.HT}}
-{{match.AT}}
+
+<tr>
+    <td><a href="/psychicbits/match{{match.id}}"> {{match.date}} </a></td>
+    <td>{{match.HT}}</td>
+    <td>{{match.AT}}</td>
+    {% if match.pred %}
+    <td>Predicted</td>
+    {% else %}
+    <td>Soon</td>
+    {% endif %}
+</tr>
+
+
+
 {% endfor %}
+</table>
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("t01");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
 </body>
 
 </html>
