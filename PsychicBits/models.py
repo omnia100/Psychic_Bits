@@ -30,7 +30,10 @@ class Match(models.Model):
     # AW_flag = models.ImageField()
 
     pred = models.CharField("Model Prediction",max_length=1, blank=True)
-    FTR = models.CharField('Full Time Result',max_length=1, blank=True) # H, A, D home,away,draw
+    FTR = models.CharField('Full Time Result',max_length=1, blank=True) # H, A, D home,away,draw4
+
+    def __str__(self):
+    	return(self.HT ,self.AT)
 
 
 

@@ -28,7 +28,7 @@ class matchData(models.Model):
 
 	def __str__(self):
 
-		return self.HomeTeam 
+		return (self.HomeTeam ,self.AwayTeam)
 
 
 
