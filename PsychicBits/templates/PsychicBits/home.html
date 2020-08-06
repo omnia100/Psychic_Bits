@@ -5,34 +5,64 @@
 <head>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  
-<link rel="stylesheet" type="text/css" href="{% static 'psychicbits/home.css'%}">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/css/all.css' %}" rel="stylesheet"> <!--load all styles -->
+  <link rel="stylesheet"  href="css/stylesheet.min.css">
+  <link rel="stylesheet"  href="css/bootstrap.min.css">
+   
+   <!-- css -->
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700" rel="stylesheet">
+  <!--<link href="css/bootstrap-responsive.css" rel="stylesheet" />
+  <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
+  <link href="css/jcarousel.css" rel="stylesheet" />
+  <link href="css/flexslider.css" rel="stylesheet" />-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/css/all.css' %}" rel="stylesheet"> <!--load all styles -->
+  <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/scss/all.scss' %}" rel="stylesheet"> <!--load all styles -->
+   <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/scss/all.scss' %}" rel="stylesheet"> <!--load all styles -->
+    <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/js/all.js' %}" rel="stylesheet"> <!--load all styles -->
+    <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/js/all.js' %}" rel="stylesheet"> <!--load all styles -->
+    <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/js/all.js' %}" rel="stylesheet"> <!--load all styles -->
 
-<h1></h1>
+  <link rel="stylesheet"  href="{% static 'psychicbits/css/all.css' %}">
+  <link id="bodybg" href="{% static 'psychicbits/bodybg/bg1.css' %}" rel="stylesheet" type="text/css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ 
 <style>
 #myInput {
-  background-image: url('/css/searchicon.png');
+    
+
   background-position: 10px 10px;
   background-repeat: no-repeat;
   width: 40%;
-  font-size: 16px;
+  font-size: 25px;
   padding: 12px 20px 12px 40px;
-  border: 3px solid black;
+  border: 3px solid #07335f;
   margin-bottom: 12px;
   margin-left: 30%;
+}
+body{ 
+      background-image: url("{% static 'psychicbits/4.jpg'%}");
+      background-size: 100% 100%;
+      background-position: fixed fill;
+      background-attachment: fixed;
+      background-repeat:repeat;
+    
 }
 </style>
 </head>
 
 <body>
-	<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Team.." title="Type in a name">
-
-	<table  id="t01"class="table table-dark table-hover" style="background-color:;width: 80%; margin-left:10%;">
-    <tr>
+  <div class="row">
+    <div class="col-xs-12 " style="padding-left: 0px;">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Team.." title="Type in a name">
+    </div>
+  <table  id="t01"class="table table-dark table-hover" style="background-color:#07333f;width: 80%; margin-left:10%; ">
+    <tr style="font-size: 20px;  font-family:'Comic Sans MS', cursive, serif;">
         <th>Time </th>
         <th>Home Team</th>
         <th>Away Team</th>
@@ -40,8 +70,8 @@
     </tr>
 {% for match in matches_list %}
 
-<tr>
-    <td><a href="/psychicbits/match{{match.id}}"> {{match.date}} </a></td>
+<tr style="font-size: 18px;">
+    <td ><a href="/psychicbits/match{{match.id}}"> {{match.date}} </a></td>
     <td>{{match.HT}}</td>
     <td>{{match.AT}}</td>
     {% if match.pred %}
@@ -55,6 +85,8 @@
 
 {% endfor %}
 </table>
+</div>
+	
 <script>
 function myFunction() {
   var input, filter, table, tr, td, i, txtValue;
