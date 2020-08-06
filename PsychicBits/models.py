@@ -32,8 +32,7 @@ class Match(models.Model):
     pred = models.CharField("Model Prediction",max_length=1, blank=True)
     FTR = models.CharField('Full Time Result',max_length=1, blank=True) # H, A, D home,away,draw4
 
-    def __str__(self):
-    	return(self.HT ,self.AT)
+   
 
 
 
