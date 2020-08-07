@@ -2,8 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework.views import APIView
 from . models import matchData
 from . serializers import matchDataSerializer
+from rest_framework.views import exception_handler
+
+import joblib
+import pandas as pd
 
 
 
@@ -21,17 +26,60 @@ def matchList(request, pk):
         return Response(serializer.data)
 """
 
+def appendFeatures(jsonObj):
+	arr=[]
+	arr.append(jsonObj[0]['AttackRateH'])
+	arr.append(jsonObj[0]['AttackRateA'])
 
+	arr.append(jsonObj[0]['DefenceRateH'])
+	arr.append(jsonObj[0]['DefenceRateA'])
 
+	arr.append(jsonObj[0]['DGH'])
+	arr.append(jsonObj[0]['DGA'])
+
+	arr.append(jsonObj[0]['HomeRank'])
+	arr.append(jsonObj[0]['AwayRank'])
+
+	arr.append(jsonObj[0]['AvgHST'])
+	arr.append(jsonObj[0]['AvgAST'])
+
+	arr.append(jsonObj[0]['AvgHF'])
+	arr.append(jsonObj[0]['AvgAF'])
+
+	arr.append(jsonObj[0]['AvgHC'])
+	arr.append(jsonObj[0]['AvgAC'])
+
+	arr.append(jsonObj[0]['AvgHR'])
+	arr.append(jsonObj[0]['AvgAR'])
+
+	arr.append(jsonObj[0]['AvgHY'])
+	arr.append(jsonObj[0]['AvgAY'])
+
+	return arr
 
 
 
 @api_view(['GET'])
-def searchMatch(request , HomeTeam,AwayTeam):
+def predictMatch(request,HomeTeam,AwayTeam):
 	match=matchData.objects.filter(HomeTeam__icontains=HomeTeam).filter(AwayTeam__icontains=AwayTeam)
 	serializer = matchDataSerializer(match,many=True)
+	jsonObj=serializer.data
+	features=appendFeatures(jsonObj)
 
-	return Response(serializer.data)
+	filePath='mlModel/finalized_model.pkl'
+	try:
+		classifier=joblib.load(filePath)
+		prediction = classifier.predict([features])[0]
+		if prediction == 1:
+			return HttpResponse('Win')
 
+		elif prediction == 0:
+			return HttpResponse('Draw')
+
+		elif prediction == -1:
+			return HttpResponse('Loss')
+
+	except ValueError as e:
+		return Response(e.args[0], status.HTTP_400_BAD_REQUEST)
 
 
