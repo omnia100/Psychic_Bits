@@ -23,31 +23,6 @@ def matchList(request, pk):
 
 
 
-@api_view(['GET'])
-def searchMatch(request , HomeTeam,AwayTeam):
-	match=matchData.objects.filter(HomeTeam__icontains=HomeTeam).filter(AwayTeam__icontains=AwayTeam)
-	serializer = matchDataSerializer(match,many=True)
-
-	return Response(serializer.data)
-
-
-
-
-
-
-
-
-
-
-@api_view(['GET'])
-def searchMatch(request , HomeTeam,AwayTeam):
-	match=matchData.objects.filter(HomeTeam__icontains=HomeTeam).filter(AwayTeam__icontains=AwayTeam)
-	serializer = matchDataSerializer(match,many=True)
-
-	return Response(serializer.data)
-
-
-
 
 
 
