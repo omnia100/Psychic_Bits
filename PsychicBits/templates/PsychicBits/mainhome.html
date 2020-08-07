@@ -141,13 +141,14 @@ h3::first-letter{
       background-attachment: fixed;
       background-repeat:repeat;
     }
+
   </style> 
 </head>
 <body>
   <nav  class="navbar navbar-inverse navbar-top " id="nav1" role="navigation" style="margin-top: 20px;"> <!-- start of nav 1-->
     <div class="container-fluid visible-lg-block" ><!-- start of cont 1 for lg block-->
       <div class="row">                 <!-- start of row 1 in cont 1 -->
-        <div class="dropdown col-lg-1"> <!-- start of dropdown 10 users 1-->        
+        <div class="dropdown col-lg-1 "> <!-- start of dropdown 10 users 1-->        
          <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;">
           Top 10 Users <i class="fas fa-trophy"></i> 
          </button>
@@ -181,16 +182,16 @@ h3::first-letter{
             <a class="dropdown-item-text"href="#">Just Text 10</a>
           </div>
         </div> <!-- end of dropdown 10 players 1-->
-        <div class="col-lg-4 col-lg-push-3 visible-lg-block"><!-- start of title -->
+        <div class="col-lg-5 col-lg-push-3 visible-lg-block"><!-- start of title -->
           <div class="w3-animate-fading">
             <h1 style='margin-top: 0px; font-size: 50px;letter-spacing: 10px; color: white;font-family:"Comic Sans MS", cursive, serif; font-weight: bold; '>PSYChiC   BiTs</h1>
           </div>
         </div>
 
-        <div class="col-lg-1 col-lg-push-4 "> <!-- start of signup of lg con-->
+        <div class="col-lg-1 col-lg-push-3 "> <!-- start of signup of lg con-->
           <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#myModal" > <i class="fas fa-user-plus"></i> Sign Up</button>
         </div>            <!-- end of signin of lg con-->
-        <div class="col-lg-1 col-lg-push-4">           <!-- start of signin of lg con-->
+        <div class="col-lg-1 col-lg-push-3">           <!-- start of signin of lg con-->
             <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#mySignin" ><i class="fas fa-sign-in-alt"></i><a href="#mySignup"></a> Sign iN</button>
         </div>  <!--end of signin of lg con-->
       </div>  <!-- end of row 1 in cont 1-->
@@ -198,20 +199,21 @@ h3::first-letter{
     </div><!-- end of cont 1 for lg block-->
 <!--*************************************************************************** -->
 <!--***************************************************************************** -->
-    <div class="container-fluid visible-xs-block"> <!-- start of cont xs -->
-        
-        <div class=" col-xs-12 col-xs-push-0"><!-- start of name -->
+    <div id="xs" class="container-fluid visible-xs-block"> <!-- start of cont xs -->
+        <div class="row "><!-- start of row  -->
+        <div class=" col-xs-10 col-xs-push-2"><!-- start of name -->
           <div class="w3-animate-fading">
             <h1 style='font-size: 35px; color: white;font-family: "Comic Sans MS", cursive, serif; font-weight: bold; '>PSYChiC   BiTs</h1>
           </div>
         </div><!-- end of name -->
         
-        <div class="row ">
-        <button class="navbar-toggle  pull-left" type="button " data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">  <!-- start button of collapse in con 2 xs -->
+        <div class="navbar "> <!-- start button 1 of collapse in con 2 xs -->
+        <button class="navbar-toggle  " type="button " data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">  <!-- start button of collapse in con 2 xs -->
           <span class="icon-bar"> </span>
           <span class="icon-bar"> </span>
-          <span class="icon-bar"> </span>
+           <span class="icon-bar"> </span>        
         </button><!-- end button of collapse in con 2 xs -->
+
         <div class="collapse navbar-collapse "  id="navbarSupportedContent"> <!-- start of collapse in con 2 xs -->
           <ul class="navbar-nav">
             <li class="nav-item">
@@ -224,7 +226,7 @@ h3::first-letter{
               <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;">Top 10 Users <i class="fas fa-trophy"></i>
               </button>
               <div class="dropdown-menu w3-hoverable" style="color: white;background-color: white;">
-                <a class="dropdown-item-text " href="#">Just text 1</a>
+            <!--    <a class="dropdown-item-text " href="#">Just text 1</a>
                 <a class="dropdown-item-text" href="#">Just text 2</a>
                 <a class="dropdown-item-text" href="#">Just Text 3</a>
                 <a class="dropdown-item-text"href="#">Just Text 4</a>
@@ -232,7 +234,7 @@ h3::first-letter{
                 <a class="dropdown-item-text"href="#">Just Text 6</a>
                 <a class="dropdown-item-text" href="#">Just Text 7</a>
                 <a class="dropdown-item-text"href="#">Just Text 8</a>
-                <a class="dropdown-item-text" href="#">Just Text 9</a>
+                <a class="dropdown-item-text" href="#">Just Text 9</a>-->
                 <a class="dropdown-item-text"href="#">Just Text 10</a>
               </div>
             </li><br>
@@ -240,7 +242,7 @@ h3::first-letter{
               <button type="button" class="btn btn-link dropdown-toggle " data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;">Top 10 players <i class="fas fa-trophy"></i>
               </button>
                 <div class="dropdown-menu w3-hoverable" style="color: white;background-color: white;">
-                  <a class="dropdown-item-text " href="#">Just playerss 1</a>
+           <!--       <a class="dropdown-item-text " href="#">Just playerss 1</a>
                   <a class="dropdown-item-text" href="#">Just text 2</a>
                   <a class="dropdown-item-text" href="#">Just Text 3</a>
                   <a class="dropdown-item-text"href="#">Just Text 4</a>
@@ -248,43 +250,45 @@ h3::first-letter{
                   <a class="dropdown-item-text"href="#">Just Text 6</a>
                   <a class="dropdown-item-text" href="#">Just Text 7</a>
                   <a class="dropdown-item-text"href="#">Just Text 8</a>
-                  <a class="dropdown-item-text" href="#">Just Text 9</a>
+                  <a class="dropdown-item-text" href="#">Just Text 9</a>-->
                   <a class="dropdown-item-text"href="#">Just Text 10</a>
                 </div>
             </li> 
           </ul> 
         </div>  <!-- end of collapse in con 2 xs -->
-        <div class="navbar "> <!-- start button 2 of collapse in con 2 xs -->
-          <button class="navbar-toggle pull-right" type="button" data-toggle="collapse" data-target="#sidbar" aria-controls="sidbar" aria-expanded="true" aria-label="Toggle navigation">
+        </div> <!-- end button 1 of collapse in con 2 xs -->
+        <div class="navbar col-xs-4 col-xs-push-6"> <!-- start button 2 of collapse in con 2 xs -->
+          <button class="navbar-toggle " type="button" data-toggle="collapse" data-target="#sidbar" aria-controls="sidbar" aria-expanded="true" aria-label="Toggle navigation">
             <span class="icon-bar"> </span>
             <span class="icon-bar"> </span>
             <span class="icon-bar"> </span>
           </button><!-- end button 2 of collapse in con 2 xs -->
-          <div class="collapse navbar-collapse "  id="sidbar">
+          <div class="collapse navbar-collapse "  id="sidbar"> <!-- ***-->
             <ul class="navbar-nav ">
               <li class="active"><a href="#HOME PAGE 2.html"> <i class="fa fa-fw fa-home"></i> Home</a></li>
               <li><a href="#services"><i class="fa fa-fw fa-user"></i> My Profile</a></li>
               <li><a href="#clients"><i class="fa fa-fw fa-chart-area"></i>  Analysis </a></li>
               <li><a href="#contact"><i class="fa fa-fw fa-chart-pie"></i>  Statistics </a></li>
               <li>
-                <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;font-size:10px;"><i class="fas fa-futbol" style="font-size: 15px; color:#222 ;"></i>  Results
+                <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;font-size:15px;"><i class="fas fa-futbol" style="font-size: 18px; color:#222 ;"></i>  Results
                 </button>
                 <div class="dropdown-menu" style="color: black;background-color: lightgray; font-size:8px;width: 15px">
-                  <a class="dropdown-item-text"href="#"><h6>Pre Matches</h6></a>
-                  <a class="dropdown-item-text" href="/.html"><h6> Next Matches</h6></a>
+                  <a class="dropdown-item-text"href="#"><h5>Pre Matches</h5></a>
+                  <a class="dropdown-item-text" href="/psychicbits"><h5> Next Matches</h5></a>
                 </div><!-- end of dropdown results 1-->
               </li>
             </ul>
-          </div> </div>
-        </div>
-     </div>
+          </div><!-- ***-->
+         </div><!-- end button 2 of collapse in con 2 xs -->
+        
+     </div><!-- end of row -->
     </div><!-- end of cont xs -->
 <!--*************************************************************************** -->
 <!--***************************************************************************** -->
     <div class="container-fluid visible-md-block visible-sm-block "> <!-- start of cont sm-md -->
       <div class="row"><!-- start of row 1 in sm md cont -->
-        <div class="dropdown col-sm-1 col-sm-push-0"> <!-- start of dropdown 10 users 1 in sm md cont-->
-          <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;">Top 10 Users <i class="fas fa-trophy"></i>
+        <div class="dropdown col-sm-1 "> <!-- start of dropdown 10 users 1 in sm md cont-->
+          <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;padding: 3px 3px;">Top 10 Users <i class="fas fa-trophy"></i>
           </button>
           <div class="dropdown-menu"  style="color: white;background-color: white;">
             <a class="dropdown-item-text " href="#">Just text 1</a>
@@ -299,8 +303,8 @@ h3::first-letter{
             <a class="dropdown-item-text"href="#">Just Text 10</a>
           </div>
         </div> <!-- end of dropdown 10 users 1 in sm md cont-->
-        <div class="dropdown col-sm-1 col-sm-push-2"> <!-- start of dropdown 10 players 1-->
-          <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;">
+        <div class="dropdown col-sm-1 col-sm-push-1"> <!-- start of dropdown 10 players 1-->
+          <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;padding: 3px 3px; margin-left: 7px;">
             Top 10 players <i class="fas fa-trophy"></i>
           </button>
           <div class="dropdown-menu"  style="color: white;background-color: white;">
@@ -316,75 +320,27 @@ h3::first-letter{
             <a class="dropdown-item-text"href="#">Just Text 10</a>
           </div>
         </div> <!-- end of dropdown 10 players 1-->
-        <div class="col-sm-1 col-sm-push-6">
-          <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#myModal" > <i class="fas fa-user-plus"></i> Sign Up</button>
-        </div>
-        <div class="col-sm-1 col-sm-push-7">
-          <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#mySignin" ><i class="fas fa-sign-in-alt"></i><a href="#mySignup"></a> Sign iN</button>
-        </div>
-      </div>  <!-- end of row 1 in sm md cont-->
-      <div class="row"> <!-- start of row 2 in sm md cont-->
-        
-        <div class="col-sm-9"><!-- start of title -->
+        <div class="col-sm-7 col-sm-push-2"><!-- start of title -->
           <div class="w3-animate-fading">
-            <h1 style='font-size: 70px; color: white;font-family: "Comic Sans MS", cursive, serif; font-weight: bold; '>PSYChiC   BiTs</h1>
+            <h1 style='padding-left: 20px; font-size: 40px; color: white;font-family: "Comic Sans MS", cursive, serif; font-weight: bold; '>PSYChiC   BiTs</h1>
           </div>
         </div><!-- end of title -->
-      </div><!-- end of row 2-->
+        <div class="col-sm-1 col-sm-push-0">
+          <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#myModal" > <i class="fas fa-user-plus"></i> Sign Up</button>
+        </div>
+        <div class="col-sm-1 col-sm-push-0" >
+          <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#mySignin" ><i class="fas fa-sign-in-alt" style="margin-left: 35px;"></i><a href="#mySignup"></a> Sign iN</button>
+        </div>
+      </div>  <!-- end of row 1 in sm md cont-->
+
+       <!--<div class="row"> start of row 2 in sm md cont-->
+        
+        
+     <!-- </div> end of row 2-->
     </div><!-- end of cont sm-md -->
     <!--*************************************************************************** -->
 <!--***************************************************************************** -->
-  <!--  <div class="container-fluid  visible-sm-block">  start of cont sm-md ->
-      <div class="row"><!-- start of row 1 in sm md cont ->
-        <div class="dropdown col-sm-1 col-sm-push-0"> <!-- start of dropdown 10 users 1 in sm md cont->
-          <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;">Top 10 Users <i class="fas fa-trophy"></i>
-          </button>
-          <div class="dropdown-menu"  style="color: white;background-color: white;">
-            <a class="dropdown-item-text " href="#">Just text 1</a>
-            <a class="dropdown-item-text" href="#">Just text 2</a>
-            <a class="dropdown-item-text" href="#">Just Text 3</a>
-            <a class="dropdown-item-text"href="#">Just Text 4</a>
-            <a class="dropdown-item-text" href="#">Just Text 5</a>
-            <a class="dropdown-item-text"href="#">Just Text 6</a>
-            <a class="dropdown-item-text" href="#">Just Text 7</a>
-            <a class="dropdown-item-text"href="#">Just Text 8</a>
-            <a class="dropdown-item-text" href="#">Just Text 9</a>
-            <a class="dropdown-item-text"href="#">Just Text 10</a>
-          </div>
-        </div> <!-- end of dropdown 10 users 1 in sm md cont->
-        <div class="dropdown col-sm-1 col-sm-push-2"> <!-- start of dropdown 10 players 1->
-          <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;">
-            Top 10 players <i class="fas fa-trophy"></i>
-          </button>
-          <div class="dropdown-menu"  style="color: white;background-color: white;">
-            <a class="dropdown-item-text " href="#">Just text 1</a>
-            <a class="dropdown-item-text" href="#">Just text 2</a>
-            <a class="dropdown-item-text" href="#">Just Text 3</a>
-            <a class="dropdown-item-text"href="#">Just Text 4</a>
-            <a class="dropdown-item-text" href="#">Just Text 5</a>
-            <a class="dropdown-item-text"href="#">Just Text 6</a>
-            <a class="dropdown-item-text" href="#">Just Text 7</a>
-            <a class="dropdown-item-text"href="#">Just Text 8</a>
-            <a class="dropdown-item-text" href="#">Just Text 9</a>
-            <a class="dropdown-item-text"href="#">Just Text 10</a>
-          </div>
-        </div> <!-- end of dropdown 10 players 1->
-        <div class="col-sm-1 col-sm-push-6">
-          <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#myModal" > <i class="fas fa-user-plus"></i> Sign Up</button>
-        </div>
-        <div class="col-sm-1 col-sm-push-7">
-          <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#mySignin" ><i class="fas fa-sign-in-alt"></i><a href="#mySignup"></a> Sign iN</button>
-        </div>
-      </div>  <!-- end of row 1 in sm md cont->
-      <div class="row"> <!-- start of row 2 in sm md cont->
-        
-        <div class="col-sm-10 col-sm-push-0"><!-- start of title ->
-          <div class="w3-animate-fading">
-            <h1 style='font-size: 70px; color: white;font-family: "Georgia", serif; font-weight: bold; '><b>PSYChiC   BiTs</b></h1>
-          </div>
-        </div><!-- end of title ->
-      </div><!-- end of row 2->
-    </div><!-- end of cont sm-md -->
+  
 <!--***************************************************************************** -->
 <!--***************************************************************************** -->
     <div class="modal fade" id="myModal" role="dialog"> <!--Sign Up Modal -->
@@ -493,21 +449,36 @@ h3::first-letter{
     </div><!-- end reset modal -->
   </nav><!-- end of nav 1--> 
   
-       
+   <!--============================================================= -->
+      <div id="xs" class="col-xs-12 col-xs-push-0 visible-xs-block" style=" margin-top: 140px;background-color: black; ">
+
+      <button class="btn btn-lights w3-animate-fading"style=" width: 160px;
+                    height: 40px; background: darkgray;
+                    position: relative; animation: mymove 5s infinite; font-size: 15px; color:#222 ;font-weight: bold;"><i class="fas fa-heart" style="font-size: 15px; color:#00008B ;"></i>Challenge Us </button><br>
+         <a style="color: white; font-size: 20px;"><b> Are You Ready For The challenge?</b>
+          <div id="div1" class="fa" style="font-size: 25px; color: black;"></div></a><br>
+       <b style="color: white; font-size: 15px;">
+          you can guess which team will win the next match with Us & if you win     
+              you will take a score and Be ONE of the Top 10 users
+       </b>
+      </div>
+
+         <!--============================================================= -->
+     
 <!--*************************************************************************** -->
 <!--***************************************************************************** -->
   <div class="w3-sidebar w3-bar-block w3-animate-left hidden-xs col-sm-2" style=" color: black; font-weight: bold; display:none;z-index:5 " id="mySidebar">
     <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
-    <a href="#HOME PAGE 2.html" style="font-size: 25px; color:#111 ;" class="active"> <i class="fa fa-fw fa-home" ></i> Home</a><br>
+    <a href="#HOME PAGE 2.html" style="font-size: 20px; color:#111 ;" class="active"> <i class="fa fa-fw fa-home" ></i> Home</a><br>
     <a href="/psychicbits/user/{{user.id}}" style="font-size: 25px; color:#111 ;"><i class="fa fa-fw fa-user" ></i> My Profile</a><br>
-    <a href="#clients" style="font-size: 25px; color:#111 ;"><i class="fa fa-fw fa-chart-area" ></i>  Analysis </a><br>
-    <a href="#contact" style="font-size: 25px; color:#111 ;"><i class="fa fa-fw fa-chart-pie" ></i>  Statistics </a><br>
+    <a href="#clients" style="font-size: 20px; color:#111 ;"><i class="fa fa-fw fa-chart-area" ></i>  Analysis </a><br>
+    <a href="#contact" style="font-size: 20px; color:#111 ;"><i class="fa fa-fw fa-chart-pie" ></i>  Statistics </a><br>
     <div class="dropdown col-sm-1 "> <!-- start of dropdown results 1-->
-      <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;font-size:20px;"><i class="fas fa-futbol" style="font-size: 25px; color:#111 ;"></i>  Results
+      <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;font-size:20px;"><i class="fas fa-futbol" style="font-size: 20px; color:#111 ;"></i>  Results
       </button>
-      <div class="dropdown-menu"  style="color: black;background-color: darkgray; font-size:3px;">
-        <a class="dropdown-item-text"href=""><h6>Pre Matches</h6></a>
-        <a class="dropdown-item-text" href="/psychicbits"><h6> Next Matches</h6></a>
+      <div class="dropdown-menu"  style="color: black;background-color: darkgray; font-size:3px; ">
+        <a class="dropdown-item-text"href=""><h4><b> Pre Matches</b></h4></a>
+        <a class="dropdown-item-text" href="/psychicbits"><h4><b>Next Matches</b></h4></a>
       </div>
     </div> <!-- end of dropdown results 1-->
   </div> <!-- end of sidebar -->
@@ -526,23 +497,19 @@ h3::first-letter{
           </div>
         </div>-->
 </div>
-<div class="col-sm-7 col-sm-push-1 col-xs-12" style="padding-top: 80px; margin-bottom:150px; ">
-         <a style="color: white; font-size: 35px;"><b> Are You Ready For The challenge?</b><div id="div1" class="fa" style="font-size: 45px; color: black;"></div></a>
-
-       <h3 style="color: white; font-size: 30px;"><b>
+<div class="col-lg-6 col-sm-9 col-md-push-3 col-sm-push-2 hidden-xs" style="padding-top: 260px; ">
+      <button class="btn btn-lights w3-animate-fading"style=" width: 200px;
+                    height: 40px; background: darkgray;
+                    position: relative; animation: mymove 5s infinite; font-size: 25px; color:#222 ;font-weight: bold;"><i class="fas fa-heart" style="font-size: 25px; color:#00008B ;"></i>Challenge Us </button><br>
+         <a style="color: white; font-size: 30px;" ><b> Are You Ready For The challenge?</b>
+          <div id="div1" class="fa" style="font-size: 35px; color: black;" ></div></a><br>
+       <b style="color: white; font-size: 20px;">
           you can guess which team will win the next match with Us & if you win     
-              you will take a score and Be ONE of the Top 10 users</b>
-       </h3>
-             <button class="btn btn-lights w3-animate-fading"style=" width: 200px;
-              height: 50px;
-              background: darkgray;
-              position: relative;
-              animation: mymove 5s infinite;
-              font-size: 25px; color:#222 ;font-weight: bold;"><i class="fas fa-heart" style="font-size: 25px; color:#00008B ;"></i>Challenge Us </button>
-              
-    </div>
+              you will take a score and Be ONE of the Top 10 users
+       </b>
+      </div>
 
- 
+       
   <div class="navbar navbar-inverse navbar-fixed-bottom" style="height: 15px;"> <!-- start of footer-->
     <div class="container"> 
       <div class="navbar-text pull-left">
@@ -565,8 +532,8 @@ h3::first-letter{
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/all.js"></script>
+<script src="{% static 'psychicbits/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'psychicbits/js/all.js' %}"></script>
 
   <script>
 function w3_open() {
