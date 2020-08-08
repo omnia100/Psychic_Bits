@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'users',
     'API',
     'rest_framework',
+    'userPrediction',
 
 ]
 
