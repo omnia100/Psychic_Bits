@@ -3,4 +3,7 @@ pbProject/__pycache__
 users/__pycache__
 API/__pycache__
 userPrediction/__pycache__
+API/migrations/__pycache__
+users/migrations/__pycache__
+userPrediction/migrations/__pycache__
 .idea/
