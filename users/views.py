@@ -23,10 +23,9 @@ def register(request):
             profile = Profile(user=user)
             profile.save()
             messages.success(request, 'Your account has been created!')
-            return HttpResponseRedirect(f'/users/{user.usermname}/')
+            return HttpResponseRedirect(f'/users/{user.username}/')
         else:
-            print("Invalid username or password.")
-            messages.error(request, "Invalid username or password.")
+            messages.error(request, "Invalid details.")
     else:
         raise Http404
 
@@ -53,7 +52,7 @@ def log_in(request):
         if user is not None:
             login(request, user)
             messages.info(request, f"You are now logged in as {username}")
-            return redirect('/psychicbits/')
+            return redirect('/psychicbits/mainhome')
         else:
             messages.error(request, "Invalid username or password.")
     # else:
