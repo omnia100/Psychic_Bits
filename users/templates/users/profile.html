@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href = "{% static 'users\profile.css'%}">
+</head>
+
+<body>
+
+{{profile.user.email}}
+{{profile.user.username}}
+<img src = {{ profile.photo }}>
+{{profile.score}}
+
+</body>
+
+</html>
