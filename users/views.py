@@ -1,31 +1,66 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Profile
 from .models import User
-from django.core.exceptions import ObjectDoesNotExist
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from .forms import NewUserForm
+
 
 
 #  login() saves the user’s ID in the session, using Django’s session framework.
 
 
+
+# POST only --> '/users/register/'
 def register(request):
     if request.method == 'POST':
-        form = NewUserForm(request.POST)
+        form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
+            login(request, user)
             profile = Profile(user=user)
             profile.save()
-            login(request, profile.user)
-            return HttpResponseRedirect('/psychicbits/')
+            messages.success(request, 'Your account has been created!')
+            return HttpResponseRedirect(f'/users/{user.usermname}/')
+        else:
+            print("Invalid username or password.")
+            messages.error(request, "Invalid username or password.")
     else:
-        form = NewUserForm()
+        raise Http404
 
-    return render(request, 'users/register.html', {'form': form})
+
+# 'users/logout/'
+def log_out(request):
+    logout(request)
+    messages.info(request, "Logged out successfully!")
+    return redirect('/psychicbits/')
+
+
+# POST only: --> /users/login/
+def log_in(request):
+    # if request.user.is_authenticated():  # if user is already logged in
+    #     return HttpResponseRedirect('/psychicbits/')
+
+    if request.method == 'POST':
+    # form = AuthenticationForm(request,request.POST)
+    # if form.is_valid():
+        form = request.POST
+        username = form['username']
+        password = form['password']
+        user = authenticate(username=username,password=password)
+        if user is not None:
+            login(request, user)
+            messages.info(request, f"You are now logged in as {username}")
+            return redirect('/psychicbits/')
+        else:
+            messages.error(request, "Invalid username or password.")
+    # else:
+    #     messages.error(request, "Invalid username or password.")
+    else:
+        raise Http404
+
 
 
 def profile(request, user_name):
@@ -33,34 +68,3 @@ def profile(request, user_name):
     profile = get_object_or_404(Profile, user=user)
     context = {'profile': profile}
     return render(request, 'users/profile.html', context)
-
-
-def logout(request):
-    logout(request)
-    return redirect('/psychicbits/')
-
-
-def log_in(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(request=request, data=request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
-                messages.info(request, f"You are now logged in as {username}")
-                return redirect('/psychicbits/')
-            else:
-                messages.error(request, "Invalid username or password.")
-        else:
-            messages.error(request, "Invalid username or password.")
-    form = AuthenticationForm()
-    return render(request=request,
-                  template_name="users/login.html",
-                  context={"form": form})
-
-
-# @login_required
-# def vote(request):
-#
