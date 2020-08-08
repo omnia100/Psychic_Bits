@@ -7,4 +7,5 @@ PsychicBits/migrations/__pycache__
 users/migrations/__pycache__
 API/migrations/__pycache__
 userPrediction/migrations/__pycache__
+db.sqlite3
 .idea/
