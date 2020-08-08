@@ -5,6 +5,9 @@ from django.http import HttpResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from . serializers import predictionSerializer
+from . models import prediction
+from PsychicBits.models import Match
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -21,6 +24,25 @@ def showPrediction(request,pk):
 	if request.method == 'GET':
 		serializer = predictionSerializer(predict)
 		return Response(serializer.data)
+
+
+
+
+
+
+
+
+
+@login_required(login_url='psychicbits/mainhome.html')
+def vote(request,userID,matchID,voting):
+	
+	match=Match.objects.get(pk=matchID)
+	newVote=prediction.objects.create(matchID=match ,vote=voting)
+	
+	#get messag vot is done 
+	#you have to log in
+
+	return HttpResponse('')
 
 
 
