@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
 {% load static %}
-<!-- -->
 
 <head>
     <link rel="stylesheet" href = "{% static 'users\profile.css'%}">
-    <h1>This is {{request.user.username}}'s page</h1>
-    {{profile.score}}
 </head>
+
+<body>
+
+{{profile.user.email}}
+{{profile.user.username}}
+<img src = "{% profile.photo %}">
+{{profile.score}}
+
+</body>
 
 </html>
