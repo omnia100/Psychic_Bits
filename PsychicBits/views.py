@@ -20,3 +20,6 @@ def profile(request, user_id):
     # context = {'user': user}
     # return render(request, 'psychicbits/userProfile.html', context)
     return None
+def home(request):
+    
+    return render(request, 'psychicbits/mainhome.html')
