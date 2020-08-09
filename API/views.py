@@ -66,7 +66,7 @@ def predictMatch(request,HomeTeam,AwayTeam):
 	jsonObj=serializer.data
 	features=appendFeatures(jsonObj)
 
-	filePath='mlModel/finalized_model.pkl'
+	filePath='mlModel/finalize.pkl'
 	try:
 		classifier=joblib.load(filePath)
 		prediction = classifier.predict([features])[0]
@@ -79,7 +79,7 @@ def predictMatch(request,HomeTeam,AwayTeam):
 		del percentageList[-1]
 
 		return HttpResponse(percentageList)
-		
+
 	except ValueError as e:
 		return Response(e.args[0], status.HTTP_400_BAD_REQUEST)
 
