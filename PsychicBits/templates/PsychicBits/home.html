@@ -53,13 +53,12 @@ body{
       background-repeat:repeat;
     
 }
-<<<<<<< Updated upstream
-=======
+
 ::placeholder {
   color: #07333f;
   opacity: 1; /* Firefox */
 }
->>>>>>> Stashed changes
+
 </style>
 </head>
 
@@ -77,15 +76,19 @@ body{
     </tr>
 {% for match in matches_list %}
 
-<tr style="font-size: 18px;">
-    <td ><a href="/psychicbits/match{{match.id}}"> {{match.date}} </a></td>
-    <td>{{match.HT}}</td>
-    <td>{{match.AT}}</td>
-    {% if match.pred %}
-    <td>Predicted</td>
+<tr style="font-size: 18px;" onload="fun2({{match.date}})">
+    {% if "fun2() >= {{match.date}}"  %}
+        <td ><a href="/psychicbits/match{{match.id}}"> {{match.date}} </a></td>
+        <td>{{match.HT}}</td>
+        <td>{{match.AT}}</td>
+        {% if match.pred %}
+        <td>Predicted</td>
+        {% else %}
+        <td>Soon</td>
+        {% endif %}
     {% else %}
-    <td>Soon</td>
-    {% endif %}
+      1  
+    {% endif %} 
 </tr>
 
 
@@ -93,9 +96,9 @@ body{
 {% endfor %}
 </table>
 </div>
-<<<<<<< Updated upstream
+
 	
-=======
+
 	<div class="navbar navbar-inverse navbar-fixed-bottom" style="height: 15px;"> <!-- start of footer-->
     <div class="container"> 
       <div class="navbar-text pull-left">
@@ -110,7 +113,7 @@ body{
     </div>
   </div> <!-- end of footer-->
   
->>>>>>> Stashed changes
+
 <script>
 function myFunction() {
   var input, filter, table, tr, td, i, txtValue;
@@ -131,6 +134,25 @@ function myFunction() {
   }
 }
 </script>
+  
+<script>
+  function fun2(){
+    var date1;
+         date1 = new Date();
+         //document.write(date1);
+         //date2 = new Date( {{match.date}} );
+         //document.write("<br>"+date2);
+        // date1 = new Date( "3/11/2017" );
+         //if (date1 > date2.getTime()) {
+         // return 1 ;
+           // document.write("<br>Date1 is *****************************************************************************the recent date.");
+         //} else { return 0;
+           // document.write("<br>Date 2 is the recent date.");
+        // }
+        return date1;
+  }
+         
+      </script>
 </body>
 
 </html>

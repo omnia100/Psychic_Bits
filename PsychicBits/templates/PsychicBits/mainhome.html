@@ -3,7 +3,7 @@
 {% load static %}
 <head>
 
-  <title>Psycic Bits</title>
+  <title>Psychic Bits</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -148,6 +148,7 @@ h3::first-letter{
   </style> 
 </head>
 <body>
+  
   <nav  class="navbar navbar-inverse navbar-top " id="nav1" role="navigation" style="margin-top: 20px;"> <!-- start of nav 1-->
     <div class="container-fluid visible-lg-block" ><!-- start of cont 1 for lg block-->
       <div class="row">                 <!-- start of row 1 in cont 1 -->
@@ -169,26 +170,50 @@ h3::first-letter{
          </ul>
         </div> <!-- end of dropdown 10 users 1-->
         
-        <div class="col-lg-5 col-lg-push-3 visible-lg-block"><!-- start of title -->
+        {% if user.is_authenticated %}
+        <div class="col-lg-7 col-lg-push-3 visible-lg-block"><!-- start of title -->
           <div class="w3-animate-fading">
-            <h1 style='margin-top: 0px; font-size: 50px;letter-spacing: 10px; color: white;font-family:"Comic Sans MS", cursive, serif; font-weight: bold; '>PSYChiC   BiTs</h1>
+            <h1 style='margin-top: 0px; font-size: 20px;letter-spacing: 5px; color: white;font-family:"Comic Sans MS", cursive, serif; font-weight: bold;'>PSYChiC BiTs
+              Welcome {{user.username}} </h1>
           </div>
         </div>
-
-        <div class="col-lg-1 col-lg-push-3 "> <!-- start of signup of lg con-->
-          <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#myModal" > <i class="fas fa-user-plus"></i> Sign Up</button>
-        </div>            <!-- end of signin of lg con-->
-        <div class="col-lg-1 col-lg-push-3">           <!-- start of signin of lg con-->
-            <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#mySignin" ><i class="fas fa-sign-in-alt"></i><a href="#mySignup"></a> Sign iN</button>
-        </div>  <!--end of signin of lg con-->
+        <div class="col-lg-1 col-lg-push-3">
+              <a href='/users/logout'  class="btn btn-light">Log Out</a>
+        </div>
+        {% else %}
+        <div class="col-lg-7 col-lg-push-3 visible-lg-block"><!-- start of title -->
+          <div class="w3-animate-fading">
+            <h1 style='margin-top: 0px; font-size: 50px;letter-spacing: 10px; color: white;font-family:"Comic Sans MS", cursive, serif; font-weight: bold;'>PSYChiC BiTs</h1>
+          </div>
+        </div>
+          <div class="col-lg-1 col-lg-push-1 "> <!-- start of signup of lg con-->
+            <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#myModal" > <i class="fas fa-user-plus"></i> Sign Up</button>
+          </div>            <!-- end of signin of lg con-->
+          <div class="col-lg-1 col-lg-push-1">           <!-- start of signin of lg con-->
+              <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#mySignin" ><i class="fas fa-sign-in-alt"></i><a href="#mySignup"></a> Sign iN</button>
+          </div>  <!--end of signin of lg con-->
+        {% endif %}
       </div>  <!-- end of row 1 in cont 1-->
 
     </div><!-- end of cont 1 for lg block-->
 <!--*************************************************************************** -->
 <!--***************************************************************************** -->
     <div id="xs" class="container-fluid visible-xs-block"> <!-- start of cont xs -->
+
         <div class="row "><!-- start of row  -->
-        <div class=" col-xs-11 col-xs-push-2"><!-- start of name -->
+          {% if user.is_authenticated %}
+            <div class="col-xs-12 col-xs-push-0 "><!-- start of title -->
+              <div class="w3-animate-fading">
+                <h1 style='margin-top: 0px; font-size: 15px;letter-spacing: 3px; color: white;font-family:"Comic Sans MS", cursive, serif; font-weight: bold;'>PSYChiC BiTs
+                  Welcome {{user.username}} </h1>
+              </div>
+            </div><br><br>
+            <div class="col-xs-1 col-xs-push-1">
+                  <a href='/users/logout' class="btn btn-light">Log Out</a>
+            </div>
+          {% else %}
+
+        <div class=" col-xs-9 col-xs-push-1"><!-- start of name -->
           <div class="w3-animate-fading">
             <h1 style='font-size: 35px; color: white;font-family: "Comic Sans MS", cursive, serif; font-weight: bold; '>PSYChiC   BiTs</h1>
           </div>
@@ -202,6 +227,7 @@ h3::first-letter{
         </button><!-- end button of collapse in con 2 xs -->
 
         <div class="collapse navbar-collapse "  id="navbarSupportedContent"> <!-- start of collapse in con 2 xs -->
+
           <ul class="navbar-nav">
             <li class="nav-item">
               <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#myModal" > <i class="fas fa-user-plus"></i><a href="#mySignup"></a> Sign Up</button>
@@ -213,15 +239,7 @@ h3::first-letter{
               <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;">Top 10 Users <i class="fas fa-trophy"></i>
               </button>
               <div class="dropdown-menu w3-hoverable" style="color: white;background-color: white;">
-            <!--    <a class="dropdown-item-text " href="#">Just text 1</a>
-                <a class="dropdown-item-text" href="#">Just text 2</a>
-                <a class="dropdown-item-text" href="#">Just Text 3</a>
-                <a class="dropdown-item-text"href="#">Just Text 4</a>
-                <a class="dropdown-item-text" href="#">Just Text 5</a>
-                <a class="dropdown-item-text"href="#">Just Text 6</a>
-                <a class="dropdown-item-text" href="#">Just Text 7</a>
-                <a class="dropdown-item-text"href="#">Just Text 8</a>
-                <a class="dropdown-item-text" href="#">Just Text 9</a>-->
+            
                 <a class="dropdown-item-text"href="#">Just Text 10</a>
               </div>
             </li><br>
@@ -229,7 +247,10 @@ h3::first-letter{
           </ul> 
         </div>  <!-- end of collapse in con 2 xs -->
         </div> <!-- end button 1 of collapse in con 2 xs -->
-        <div class="navbar col-xs-4 col-xs-push-6"> <!-- start button 2 of collapse in con 2 xs -->
+        {% endif %}
+      {% if user.is_authenticated %}
+        <div class="navbar col-xs-1 col-xs-push-0"> <!-- start button 2 of collapse in con 2 xs -->
+          <br><br>
           <button class="navbar-toggle " type="button" data-toggle="collapse" data-target="#sidbar" aria-controls="sidbar" aria-expanded="true" aria-label="Toggle navigation">
             <span class="icon-bar"> </span>
             <span class="icon-bar"> </span>
@@ -250,7 +271,8 @@ h3::first-letter{
             </ul>
           </div><!-- ***-->
          </div><!-- end button 2 of collapse in con 2 xs -->
-        
+      {% else %}   
+      {% endif %}
      </div><!-- end of row -->
     </div><!-- end of cont xs -->
 <!--*************************************************************************** -->
@@ -273,18 +295,29 @@ h3::first-letter{
             <a class="dropdown-item-text"href="#">Just Text 10</a>
           </div>
         </div> <!-- end of dropdown 10 users 1 in sm md cont-->
-        
-        <div class="col-sm-7 col-sm-push-2"><!-- start of title -->
-          <div class="w3-animate-fading">
-            <h1 style='padding-left: 20px; font-size: 40px; color: white;font-family: "Comic Sans MS", cursive, serif; font-weight: bold; '>PSYChiC   BiTs</h1>
-          </div>
-        </div><!-- end of title -->
-        <div class="col-sm-1 col-sm-push-0">
-          <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#myModal" > <i class="fas fa-user-plus"></i> Sign Up</button>
-        </div>
-        <div class="col-sm-1 col-sm-push-0" >
-          <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#mySignin" ><i class="fas fa-sign-in-alt" style="margin-left: 35px;"></i><a href="#mySignup"></a> Sign iN</button>
-        </div>
+        {% if user.is_authenticated %}
+          <div class="col-sm-8 col-sm-push-2 "><!-- start of title -->
+              <div class="w3-animate-fading">
+                <h1 style='margin-top: 0px; font-size: 15px;letter-spacing: 3px; color: white;font-family:"Comic Sans MS", cursive, serif; font-weight: bold;'>PSYChiC BiTs
+                  Welcome {{user.username}} </h1>
+              </div>
+            </div>
+            <div class="col-sm-1 col-sm-push-1">
+                  <a href='/users/logout' class="btn btn-light">Log Out</a>
+            </div>
+        {% else %}
+          <div class="col-sm-7 col-sm-push-2"><!-- start of title -->
+            <div class="w3-animate-fading">
+              <h1 style='padding-left: 20px; font-size: 40px; color: white;font-family: "Comic Sans MS", cursive, serif; font-weight: bold; '>PSYChiC   BiTs</h1>
+            </div>
+          </div><!-- end of title -->
+            <div class="col-sm-1 col-sm-push-0">
+              <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#myModal" > <i class="fas fa-user-plus"></i> Sign Up</button>
+            </div>
+            <div class="col-sm-1 col-sm-push-0" >
+              <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#mySignin" ><i class="fas fa-sign-in-alt" style="margin-left: 35px;"></i><a href="#mySignup"></a> Sign iN</button>
+            </div>
+        {% endif %}  
       </div>  <!-- end of row 1 in sm md cont-->
 
        <!--<div class="row"> start of row 2 in sm md cont-->
@@ -309,7 +342,7 @@ h3::first-letter{
               {% csrf_token %}
               <div class="form-group">
                 <label class="control-label col-sm-4 col-xs-5" for="username">Name</label>
-                <input type="text" id="username" name="username" placeholder="Name.." maxlength=30 class="control-group" style=" border-radius: 7px;font-style:oblique;">
+                <input type="text" id="username" name="username" placeholder="Name.." maxlength=30 class="control-group" style=" border-radius: 7px;font-style:oblique;" required="">
               </div>
               
               <div class="form-group">
@@ -374,12 +407,12 @@ h3::first-letter{
     </div><!-- end signin modal -->
 <!--*************************************************************************** -->
 <!--***************************************************************************** -->
-    <div class="modal fade" id="myReset" role="dialog"> <!--start Reset Modal -->
+     <!--<div class="modal fade" id="myReset" role="dialog">start Reset Modal ->
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header"><!--start Reset Modal header-->
+          <div class="modal-header"><!--start Reset Modal header->
             <button type="button" class="close" data-dismiss="modal"><i class="fas fa-window-close" style="color:white; font-size:30px;"></i></button>
-          </div>  <!--start Reset Modal header-->
+          </div>  <!--start Reset Modal header->
           <div class="modal-body" style="background-color: white;">
             <form class="form-horizontal" style="font-family: 'Comic Sans MS', cursive,serif;">
               <div class="form-group">
@@ -401,6 +434,7 @@ h3::first-letter{
   </nav><!-- end of nav 1--> 
   
    <!--============================================================= -->
+   {% if user.is_authenticated %}
       <div id="xs" class="col-xs-12 col-xs-push-0 visible-xs-block" style=" margin-top: 140px;background-color: black; ">
 
       <a class="btn btn-lights w3-animate-fading"style=" width: 160px;
@@ -413,51 +447,48 @@ h3::first-letter{
               you will take a score and Be ONE of the Top 10 users
        </b>
       </div>
-
+    {% endif %}
          <!--============================================================= -->
      
 <!--*************************************************************************** -->
 <!--***************************************************************************** -->
-  <div class="w3-sidebar w3-bar-block w3-animate-left hidden-xs col-sm-2" style=" color: black; font-weight: bold; display:none;z-index:5 " id="mySidebar">
-    <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
-    <a href="/psychicbits/mainhome" style="font-size: 20px; color:#111 ;" class="active"> <i class="fa fa-fw fa-home" ></i> Home</a><br>
-    <a href="users\profile" style="font-size: 25px; color:#111 ;"><i class="fa fa-fw fa-user" ></i> My Profile</a><br>
-    <div class="dropdown col-sm-1 "> <!-- start of dropdown results 1-->
-      <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;font-size:20px;"><i class="fas fa-futbol" style="font-size: 20px; color:#111 ;"></i>  Results
-      </button>
-      <div class="dropdown-menu"  style="color: black;background-color: darkgray; font-size:3px; ">
-        <a class="dropdown-item-text"href="/psychicbits/vote"><h4><b> Pre Matches</b></h4></a>
-        <a class="dropdown-item-text" href="/psychicbits/results"><h4><b>Next Matches</b></h4></a>
-      </div>
-    </div> <!-- end of dropdown results 1-->
-  </div> <!-- end of sidebar -->
+  {% if user.is_authenticated %}
+      <div class="w3-sidebar w3-bar-block w3-animate-left hidden-xs col-sm-2" style=" color: black; font-weight: bold; display:none;z-index:5 " id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+        <a href="/psychicbits/mainhome" style="font-size: 20px; color:#111 ;" class="active"> <i class="fa fa-fw fa-home" ></i> Home</a><br>
+        <a href="/users/{{user.username}}" style="font-size: 25px; color:#111 ;"><i class="fa fa-fw fa-user" ></i> My Profile</a><br>
+        <div class="dropdown col-sm-1 "> <!-- start of dropdown results 1-->
+          <a type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: black; background-color: lightgray;font-weight: bold;font-size:20px;"><i class="fas fa-futbol" style="font-size: 20px; color:#111 ;"></i>  Results
+          </a>
+          <div class="dropdown-menu"  style="color: black;background-color: darkgray; font-size:3px; ">
+            <a class="dropdown-item-text"href="/psychicbits/vote"><h4><b> Pre Matches</b></h4></a>
+            <a class="dropdown-item-text" href="/psychicbits/results"><h4><b>Next Matches</b></h4></a>
+          </div>
+        </div> <!-- end of dropdown results 1-->
+      </div> <!-- end of sidebar -->
+  {% else %}    
+  {% endif %}
 <!--*************************************************************************** -->
 <!--***************************************************************************** -->
-  <div class="w3-overlay w3-animate-opacity hidden-xs" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div><!-- sidebar Content -->
-  <div><button class="w3-button w3-white w3-xxlarge hidden-xs" onclick="w3_open()">&#9776;</button></div>
-  <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
-   <!-- <div class="container"> start of text-->
-  <div class="col-sm-push-5 col-sm-push-0">
-  <!--***************************-->
-    
- <!--<div class="col-lg-9 col-lg-push-3 visible-lg-block"><!-- start of title ->
-          <div class="w3-animate-fading">
-            <h1 style='margin-top: 0px; font-size: 80px;letter-spacing: 10px; color: black;font-family:"Comic Sans MS", cursive, serif; font-weight: bold; '>PSYChiC   BiTs</h1>
+  {% if user.is_authenticated %}
+      <div class="w3-overlay w3-animate-opacity hidden-xs" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div><!-- sidebar Content -->
+      <div><button class="w3-button w3-white w3-xxlarge hidden-xs" onclick="w3_open()">&#9776;</button></div>
+      <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+       <!-- <div class="container"> start of text-->
+     
+    <div class="col-lg-6 col-sm-9 col-md-push-3 col-sm-push-2 hidden-xs" style="padding-top: 260px; ">
+          <a href="/psychicbits/vote" class="btn btn-lights w3-animate-fading"style=" width: 200px;
+                        height: 40px; background: darkgray;
+                        position: relative; animation: mymove 5s infinite; font-size: 25px; color:#222 ;font-weight: bold;"><i class="fas fa-heart" style="font-size: 25px; color:#00008B ;"></i>Challenge Us </a><br>
+             <a style="color: white; font-size: 30px;" ><b> Are You Ready For The challenge?</b>
+              <div id="div1" class="fa" style="font-size: 35px; color: black;" ></div></a><br>
+           <b style="color: white; font-size: 20px;">
+              you can guess which team will win the next match with Us & if you win     
+                  you will take a score and Be ONE of the Top 10 users
+           </b>
           </div>
-        </div>-->
-</div>
-<div class="col-lg-6 col-sm-9 col-md-push-3 col-sm-push-2 hidden-xs" style="padding-top: 260px; ">
-      <a href="/psychicbits/vote" class="btn btn-lights w3-animate-fading"style=" width: 200px;
-                    height: 40px; background: darkgray;
-                    position: relative; animation: mymove 5s infinite; font-size: 25px; color:#222 ;font-weight: bold;"><i class="fas fa-heart" style="font-size: 25px; color:#00008B ;"></i>Challenge Us </a><br>
-         <a style="color: white; font-size: 30px;" ><b> Are You Ready For The challenge?</b>
-          <div id="div1" class="fa" style="font-size: 35px; color: black;" ></div></a><br>
-       <b style="color: white; font-size: 20px;">
-          you can guess which team will win the next match with Us & if you win     
-              you will take a score and Be ONE of the Top 10 users
-       </b>
-      </div>
-
+  {% else %}        
+  {% endif %}
        
   <div class="navbar navbar-inverse navbar-fixed-bottom" style="height: 15px;"> <!-- start of footer-->
     <div class="container"> 

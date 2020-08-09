@@ -35,13 +35,13 @@ def register(request):
 def log_out(request):
     logout(request)
     messages.info(request, "Logged out successfully!")
-    return redirect('/psychicbits/')
+    return redirect('/psychicbits/mainhome')
 
 
 # POST only: --> /users/login/
 def log_in(request):
     # if request.user.is_authenticated():  # if user is already logged in
-    #     return HttpResponseRedirect('/psychicbits/')
+     #    return HttpResponseRedirect('/psychicbits/mainhome')
 
     if request.method == 'POST':
     # form = AuthenticationForm(request,request.POST)
