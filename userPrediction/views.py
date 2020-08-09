@@ -68,14 +68,6 @@ def calculateScore(request, matchID, result):
 	
 
 
-		
-"""
-		
-
-"""
-	
-
-	
 
 
 
