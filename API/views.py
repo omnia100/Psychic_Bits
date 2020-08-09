@@ -70,15 +70,16 @@ def predictMatch(request,HomeTeam,AwayTeam):
 	try:
 		classifier=joblib.load(filePath)
 		prediction = classifier.predict([features])[0]
-		if prediction == 1:
-			return HttpResponse('Win')
+		percentage=classifier.predict_proba([features])[0]
+		percentageList=[]
+		for i in (percentage):
+			p=str(i)
+			percentageList.append(p)
+			percentageList.append(',')
+		del percentageList[-1]
 
-		elif prediction == 0:
-			return HttpResponse('Draw')
-
-		elif prediction == -1:
-			return HttpResponse('Loss')
-
+		return HttpResponse(percentageList)
+		
 	except ValueError as e:
 		return Response(e.args[0], status.HTTP_400_BAD_REQUEST)
 
