@@ -7,9 +7,6 @@ import csv
 import os
 from PsychicBits.models import Match
 
-path = r'C:\\Users\Omnia\Desktop'
-os.chdir(path)
-
 with open('E0.csv') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
