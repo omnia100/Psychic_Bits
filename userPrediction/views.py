@@ -7,6 +7,7 @@ from rest_framework.response import Response
 from . serializers import predictionSerializer
 from . models import prediction
 from PsychicBits.models import Match
+from users.models import Profile
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -43,6 +44,46 @@ def vote(request,userID,matchID,voting):
 	#you have to log in
 
 	return HttpResponse('')
+
+
+def calculateScore(request, matchID, result):
+	match=Match.objects.get(pk=matchID)
+
+	truePredictions=prediction.objects.filter(matchID__id=matchID).filter(vote=result)#return queryset of matchID res filtered prediction 
+
+	#print(truePredictions)
+	
+
+	print(truePredictions)
+	if not truePredictions:
+		return HttpResponse('<h1>No true prediction</h1>')
+
+	
+	for predictionObj in truePredictions: 
+		predictor=Profile.objects.get(pk=predictionObj.userID)
+		predictor.score+=1
+		predictor.save()
+	return HttpResponse('score increased')
+	
+	
+
+
+		
+"""
+		
+
+"""
+	
+
+	
+
+
+
+
+
+
+
+
 
 
 
