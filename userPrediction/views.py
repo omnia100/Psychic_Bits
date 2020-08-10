@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404,redirect
 from .models import prediction
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseNotFound
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from . serializers import predictionSerializer
@@ -20,7 +20,7 @@ from django.contrib.auth.decorators import login_required
 def showPrediction(request,pk):
 	try:
 		predict = prediction.objects.get(pk=pk)
-	except predict.DoesNotExist:
+	except prediction.DoesNotExist:
 		return HttpResponseNotFound('<h1>no such ID</h1>')
 
 	if request.method == 'GET':
@@ -64,6 +64,15 @@ def calculateScore(request, matchID, result):
 		predictor.score+=1
 		predictor.save()
 	return HttpResponse('score increased')
+
+
+
+
+def topTen(request):
+	scoreList=Profile.objects.all().order_by('-score')[:10]
+	for user in scoreList:
+		#print(user.user,' ',user.score)
+	return HttpResponse('show top 10 user')
 	
 	
 
