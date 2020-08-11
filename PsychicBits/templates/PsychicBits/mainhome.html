@@ -186,7 +186,7 @@ h3::first-letter{
            <button type="button" class="btn btn-link btn-lg " style="margin-right:21px; "><a href="psychicbits/mainhome"></a><i class="fa fa-fw fa-home"></i><b>Home</b></button>
         </div>-->
         <div class="col-sm-2 col-lg-push-1 col-sm-push-1 col-md-push-2" style="margin-left:10px;">
-          <button type="button" class="btn btn-link btn-lg active"><a href="/users/login"style="color:darkgray;"><i class="fa fa-fw fa-user"></i><b> {{user.username}} Profile</a></b></button>  
+          <button type="button" class="btn btn-link btn-lg active"><a href="/users/{{user.username}}"style="color:darkgray;"><i class="fa fa-fw fa-user"></i><b> {{user.username}} Profile</a></b></button>  
         </div>
          <div class="col-sm-1 col-lg-push-1 col-md-push-3 col-sm-push-2"style="margin-left:90px;">
               <button type="button" class="btn btn-link btn-lg" ><i class="fas fa-sign-out-alt"></i><a href='/users/logout' style="color: darkgray;">Log Out</a></button>
@@ -243,7 +243,7 @@ h3::first-letter{
 
       {% if user.is_authenticated %}
             
-                  <li><a href="#services"><i class="fa fa-fw fa-user"></i>{{user.username}}Profile</a></li>
+                  <li><a href="/users/profile"><i class="fa fa-fw fa-user"></i>{{user.username}}Profile</a></li>
                   <li>
                     <div class="col-xs-2 col-lg-push-1">
                       <button type="button" class="btn btn-link btn-lg" ><i class="fas fa-sign-out-alt"></i><a href='/users/logout' style="color: darkgray;">Log Out</a></button>
