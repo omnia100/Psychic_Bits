@@ -10,6 +10,7 @@ def Updates():
     # update_scores(row1['HomeTeam'], row1['HomeTeam'], row1['FTR'])
 
     p = Get_new_Pred(row2['HomeTeam'], row2['AwayTeam'])
+    p = 'H'
     add_pred(row2['HomeTeam'], row2['AwayTeam'], p)
 
 

@@ -107,6 +107,7 @@ body{
         <th>Time </th>
         <th>Home Team</th>
         <th>Away Team</th>
+        <th>Results</th>
         <th>Prediction</th>
     </tr>
 {% for match in matches_list %}
@@ -116,14 +117,19 @@ body{
         <td ><a href="/psychicbits/match{{match.id}}"> {{match.date}} </a></td>
         <td>{{match.HT}}</td>
         <td>{{match.AT}}</td>
+
+        {% if match.FTR %}
+        <td>{{match.FTR}}</td>
+        {% else %}
+        <td>not Played yet</td>
+        {% endif %}
+
         {% if match.pred %}
-        <td>Predicted</td>
+        <td>{{match.pred}}</td>
         {% else %}
         <td>Soon</td>
         {% endif %}
-    {% else %}
-      1  
-    {% endif %} 
+    {% endif %}
 </tr>
 
 
