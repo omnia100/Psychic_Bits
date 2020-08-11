@@ -295,8 +295,17 @@ h3::first-letter{
 </div>
 
 
+{% for vote in history %}
+   {{vote.matchID}}
+   {% if vote.matchID.FTR != ""%}
+  Final:
+   {{vote.matchID.FTR}}
+   {% endif %}
+  yours:
+   {{vote.vote}}
+{% endfor %}
 
-       
+
   <div class="navbar navbar-inverse navbar-fixed-bottom" style="height: 15px;"> <!-- start of footer-->
     <div class="container-fluid"> 
       <div class="row" style="width: 100%;">

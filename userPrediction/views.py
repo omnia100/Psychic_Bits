@@ -16,31 +16,35 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-@api_view(['GET'])
-def showPrediction(pk):
-    try:
 
-        predict = prediction.objects.get(pk=pk)
-    except prediction.DoesNotExist:
-        return HttpResponseNotFound('<h1>no such ID</h1>')
+def showPrediction(prof):
+    predict = prediction.objects.filter(userID=prof)
+    return predict
 
-    # if request.method == 'GET':
-    #     serializer = predictionSerializer(predict)
-    #     return Response(serializer.data)
+# if request.method == 'GET':
+#     serializer = predictionSerializer(predict)
+#     return Response(serializer.data)
 
-#vote/<int:matchID>/
+# vote/<int:matchID>/
 @login_required(login_url='psychicbits/mainhome.html')
 def vote(request, matchID):
     if request.method == 'POST':
         vote = request.POST['browser']
-        username = request.user.username
+
         match = Match.objects.get(pk=matchID)
+
+        username = request.user.username
         user = get_object_or_404(User, username=username)
         profileObj = get_object_or_404(Profile, user=user)
-        newVote = prediction.objects.create(userID=profileObj, matchID=match, vote=vote)
+
+        old = prediction.objects.filter(matchID=match, userID=profileObj)
+        if old:
+            old.delete()
+
+        newVote = prediction(userID=profileObj, matchID=match, vote=vote)
+        newVote.save()
 
     return redirect('/psychicbits/mainhome')
-
 
 def calculateScore(request, matchID, result):
     match = Match.objects.get(pk=matchID)
@@ -56,7 +60,6 @@ def calculateScore(request, matchID, result):
         predictor.profile.score += 1
         predictor.save()
     return HttpResponse('score increased')
-
 
 def topTen():
     scoreList = Profile.objects.all().order_by('-score')[:10]

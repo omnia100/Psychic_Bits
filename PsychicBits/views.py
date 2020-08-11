@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from PsychicBits.models import Match
 from django.shortcuts import render
@@ -24,6 +25,7 @@ def mainhome(request):
     context = {'names':names,
                'scores':scores}
     return render(request, 'psychicbits/mainhome.html',context)
+
 
 def vote(request):
     m = Match.objects.filter(FTR= "").filter(pred__isnull=False)[0]

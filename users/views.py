@@ -1,6 +1,8 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
+
+from userPrediction.views import showPrediction
 from .models import Profile
 from .models import User
 from django.http import HttpResponse, HttpResponseRedirect, Http404
@@ -62,7 +64,7 @@ def log_in(request):
 def profile(request, user_name):
     user = get_object_or_404(User, username=user_name)
     profile = get_object_or_404(Profile, user=user)
-    # history = showPrediction(request.user.)
-    context = {'profile': profile,}
-               # 'history':history}
+    history = showPrediction(profile)
+    context = {'profile': profile,
+               'history': history}
     return render(request, 'users/profile.html', context)
