@@ -4,8 +4,9 @@ from . import views
 
 urlpatterns = [ 
  #path('match/<int:pk>', views.matchList),
- path('prediction/<int:pk>', views.showPrediction),
- path('vote/<user_name>/<int:matchID>/<str:voting>/', views.vote),
- path('score/<int:matchID>/<str:result>/', views.calculateScore),
+ path('prediction/<int:pk>', views.showPrediction, name='prediction'),
+ path('vote/<user_name>/<int:matchID>/<str:voting>/', views.vote, name='vote'),
+ path('score/<int:matchID>/<str:result>/', views.calculateScore, name='score'),
+  path('topTen/', views.topTen, name='topTen'),
 
 ]
