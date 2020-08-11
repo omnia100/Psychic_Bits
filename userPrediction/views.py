@@ -4,17 +4,15 @@ from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseNotFound
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from . serializers import predictionSerializer
-from . models import prediction
+from .serializers import predictionSerializer
+from .models import prediction
 from PsychicBits.models import Match
 from users.models import Profile
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
+
 # Create your views here.
-
-
-
 
 @api_view(['GET'])
 def showPrediction(request,pk):
@@ -26,13 +24,6 @@ def showPrediction(request,pk):
 	if request.method == 'GET':
 		serializer = predictionSerializer(predict)
 		return Response(serializer.data)
-
-
-
-
-
-
-
 
 
 @login_required(login_url='psychicbits/mainhome.html')
@@ -73,19 +64,3 @@ def topTen(request):
 	for user in scoreList:
 		print(user.user,' ',user.score)
 	return HttpResponse('show top 10 user')
-	
-	
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
