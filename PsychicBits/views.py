@@ -13,6 +13,13 @@ def match(request, match_id):
     match = Match.objects.get(id=match_id)
     context = {'match': match}
     return render(request, 'psychicbits/match.html', context)
+def mainhome(request):
+    
+    return render(request, 'psychicbits/mainhome.html')
+def vote(request):
+    
+    return render(request, 'psychicbits/vote.html')
+
 
 
 def profile(request, user_id):

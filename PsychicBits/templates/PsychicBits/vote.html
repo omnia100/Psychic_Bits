@@ -276,7 +276,19 @@ h3::first-letter{
   <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
   
 <h1>Matches Of ToDay</h1>
-{{match.HT}} {{match.AT}}
+  <form action="/action_page.php" method="get">
+  <label for="browser">{{match.HT}} </label>
+  <input list="browsers" name="browser" id="browser">
+  <datalist id="browsers">
+    <option value="W">
+    <option value="L">
+    <option value="D">
+  </datalist>
+  {{match.AT}}
+  <input type="submit">
+</form>
+
+
        
   <div class="navbar navbar-inverse navbar-fixed-bottom" style="height: 15px;"> <!-- start of footer-->
     <div class="container"> 
