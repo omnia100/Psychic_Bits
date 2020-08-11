@@ -26,7 +26,9 @@ def mainhome(request):
     return render(request, 'psychicbits/mainhome.html',context)
 
 def vote(request):
-    return render(request, 'psychicbits/vote.html')
+    m = Match.objects.filter(FTR= "").filter(pred__isnull=False)[0]
+    context={'nextmatch':m}
+    return render(request, 'psychicbits/vote.html',context)
 
 
 
