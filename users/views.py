@@ -23,7 +23,7 @@ def register(request):
             profile = Profile(user=user)
             profile.save()
             messages.success(request, 'Your account has been created!')
-            return HttpResponseRedirect(f'/users/{user.usermname}/')
+            return HttpResponseRedirect(f'/users/{user.username}/')
         else:
             print("Invalid username or password.")
             messages.error(request, "Invalid username or password.")
@@ -35,13 +35,13 @@ def register(request):
 def log_out(request):
     logout(request)
     messages.info(request, "Logged out successfully!")
-    return redirect('/psychicbits/')
+    return redirect('/psychicbits/mainhome')
 
 
 # POST only: --> /users/login/
 def log_in(request):
     # if request.user.is_authenticated():  # if user is already logged in
-    #     return HttpResponseRedirect('/psychicbits/')
+     #    return HttpResponseRedirect('/psychicbits/mainhome')
 
     if request.method == 'POST':
     # form = AuthenticationForm(request,request.POST)
@@ -53,7 +53,7 @@ def log_in(request):
         if user is not None:
             login(request, user)
             messages.info(request, f"You are now logged in as {username}")
-            return redirect('/psychicbits/')
+            return redirect('/psychicbits/mainhome')
         else:
             messages.error(request, "Invalid username or password.")
     # else:

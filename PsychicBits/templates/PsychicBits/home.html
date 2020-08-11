@@ -53,18 +53,52 @@ body{
       background-repeat:repeat;
     
 }
-<<<<<<< Updated upstream
-=======
+
 ::placeholder {
   color: #07333f;
   opacity: 1; /* Firefox */
 }
->>>>>>> Stashed changes
+
 </style>
 </head>
 
 <body>
-  <div class="row">
+    <nav  class="navbar navbar-inverse navbar-top " id="nav1" role="navigation" style="margin-top: 0px;"> <!-- start of nav 1-->
+    <div class="container-fluid " ><!-- start of cont 1 for lg block-->
+      <div class="row"> 
+        <!--
+        
+        <div class="col-sm-5 col-sm-push-0 col-xs-5 hidden-lg hidden-xs"><!-- start of title ->
+          <div class="w3-animate-fading">
+            <h1 style='margin-top: 0px; font-size: 30px;letter-spacing: -2px; color: darkgray;font-family:"Comic Sans MS", cursive, serif; font-weight: bold;'>Psychic bits</h1>
+          </div>
+        </div>
+        <div class="col-xs-5 visible-xs-block "><!-- start of title ->
+          <div class="w3-animate-fading">
+            <h1 style='margin-top: 0px; font-size: 30px;letter-spacing: -2px; color: darkgray;font-family:"Comic Sans MS", cursive, serif; font-weight: bold;'>Psychic bits</h1>
+          </div>
+        </div>-->
+    {% if user.is_authenticated %}
+      <div class="col-lg-12 col-xs-6 col-lg-push-0 visible-lg-block"><!-- start of title -->
+          <div class="w3-animate-fading">
+            <h1 style='margin-top: 0px; font-size: 30px;letter-spacing: 7px; color: darkgray;font-family:"Comic Sans MS", cursive, serif; font-weight: bold;'>Psychic bits</h1>
+          </div>
+        </div>
+    {% else %}
+      <div class="col-lg-7 col-xs-6 col-xs-push-0 col-lg-push-0 "><!-- start of title -->
+          <div class="w3-animate-fading">
+            <h1 style='margin-top: 0px; font-size: 30px;letter-spacing: 7px; color: darkgray;font-family:"Comic Sans MS", cursive, serif; font-weight: bold;'>Psychic bits</h1>
+          </div>
+        </div>
+      <div class="col-lg-1 col-lg-push-0 col-sm-3 col-xs-2 col-sm-push-0 col-md-push-2"style="margin-left:10px; "> <!-- start of signup of lg con-->
+            <button type="button" class="btn btn-link btn-lg w3-animate-fading" data-toggle="modal" data-target="#myModel"style='margin-top: 0px; font-size: 20px; color: darkgray;font-family:"Comic Sans MS", cursive, serif; font-weight: bold;' ><a href="/psychicbits/mainhome#myModel" LINK="red"><i class="fas fa-user-plus"></i> Sign Up</a></button>
+          </div>            <!-- end of signin of lg con-->
+          <div class="col-lg-1 col-lg-push-2 col-sm-3 col-xs-2 col-sm-push-1 col-md-push-4" style="margin-left:0px;">           <!-- start of signin of lg con-->
+              <button type="button" class="btn btn-link btn-lg w3-animate-fading" data-toggle="modal" data-target="#mySignin" style='margin-top: 0px; font-size: 20px; color: darkgray;font-family:"Comic Sans MS", cursive, serif; font-weight: bold;'><a href="/psychicbits/mainhome#mySignin"><i class="fas fa-sign-in-alt"></i> Sign iN</a></button>
+          </div>  <!--end of signin of lg con-->
+    {% endif %}
+  </div></div>
+  </nav>
     <div class="col-xs-12 " style="padding-left: 0px;">
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Team.." title="Type in a name">
     </div>
@@ -77,15 +111,19 @@ body{
     </tr>
 {% for match in matches_list %}
 
-<tr style="font-size: 18px;">
-    <td ><a href="/psychicbits/match{{match.id}}"> {{match.date}} </a></td>
-    <td>{{match.HT}}</td>
-    <td>{{match.AT}}</td>
-    {% if match.pred %}
-    <td>Predicted</td>
+<tr style="font-size: 18px;" onload="fun2({{match.date}})">
+    {% if "fun2() >= {{match.date}}"  %}
+        <td ><a href="/psychicbits/match{{match.id}}"> {{match.date}} </a></td>
+        <td>{{match.HT}}</td>
+        <td>{{match.AT}}</td>
+        {% if match.pred %}
+        <td>Predicted</td>
+        {% else %}
+        <td>Soon</td>
+        {% endif %}
     {% else %}
-    <td>Soon</td>
-    {% endif %}
+      1  
+    {% endif %} 
 </tr>
 
 
@@ -93,24 +131,29 @@ body{
 {% endfor %}
 </table>
 </div>
-<<<<<<< Updated upstream
+
 	
-=======
+
 	<div class="navbar navbar-inverse navbar-fixed-bottom" style="height: 15px;"> <!-- start of footer-->
-    <div class="container"> 
-      <div class="navbar-text pull-left">
-        <p> copyright psychicbits 2020</p>
-      </div>
-      <div class="navbar-text pull-right">
-        <a href="#"><i class="fab fa-facebook-square" style="color: white;font-size: 30px; padding: 0px 0px 0px 0px; margin: 0px 0px;"></i> </a>
-        <a href="#"><i class="fab fa-twitter-square" style="color: white;font-size: 30px;"></i></a>
-        <a href="#"><i class="fab fa-google-plus-square" style="color: white;font-size: 30px;"></i></a>
-        <a href="#"><i class="fab fa-instagram-square" style="color: white;font-size: 30px;"></i></a>
+    <div class="container-fluid"> 
+      <div class="row" style="width: 100%;">
+          <div class="navbar-text col-lg-4 col-sm-5  col-xs-6 ">
+            <p> copyright psychicbits 2020</p>
+          </div>
+          <div class="col-lg-6 col-lg-push-2 col-xs-6 " >
+            <div class="navbar-text pull-right">
+              <a href="#"><i class="fab fa-facebook-square" style="color: white;font-size: 28px; "></i> </a>
+              <a href="#"><i class="fab fa-twitter-square" style="color: white;font-size: 28px;"></i></a>
+              <a href="#"><i class="fab fa-google-plus-square" style="color: white;font-size:28px;"></i></a>
+              <a href="#"><i class="fab fa-instagram-square" style="color: white;font-size: 28px;"></i></a>
+            </div>
+          </div>
+      
       </div>
     </div>
   </div> <!-- end of footer-->
   
->>>>>>> Stashed changes
+
 <script>
 function myFunction() {
   var input, filter, table, tr, td, i, txtValue;
@@ -131,6 +174,25 @@ function myFunction() {
   }
 }
 </script>
+  
+<script>
+  function fun2(){
+    var date1;
+         date1 = new Date();
+         //document.write(date1);
+         //date2 = new Date( {{match.date}} );
+         //document.write("<br>"+date2);
+        // date1 = new Date( "3/11/2017" );
+         //if (date1 > date2.getTime()) {
+         // return 1 ;
+           // document.write("<br>Date1 is *****************************************************************************the recent date.");
+         //} else { return 0;
+           // document.write("<br>Date 2 is the recent date.");
+        // }
+        return date1;
+  }
+         
+      </script>
 </body>
 
 </html>
