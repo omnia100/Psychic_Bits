@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'API',
     'rest_framework',
     'userPrediction',
-    'users',	
+    'users',
+    'django_extensions',
 
 ]
 
