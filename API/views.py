@@ -57,6 +57,51 @@ def appendFeatures(jsonObj):
     return arr
 
 
+
+
+
+
+
+def predictMatchPP(HomeTeam, AwayTeam):
+    match = matchData.objects.filter(HomeTeam__exact=HomeTeam).filter(AwayTeam__exact=AwayTeam)
+    serializer = matchDataSerializer(match, many=True)
+    jsonObj = serializer.data
+    features = appendFeatures(jsonObj)
+
+    filePath = 'mlModel/finalize.pkl'
+    try:
+        classifier = joblib.load(filePath)
+        prediction = classifier.predict([features])[0]
+        percentage = classifier.predict_proba([features])[0]
+
+        if prediction == 1:
+            predVal = 'H'
+
+        elif prediction == 0:
+            predVal = 'D'
+
+        if prediction == -1:
+            predVal = 'A'
+
+        percentageList = []
+        for i in (percentage):
+            p = str(i)
+            percentageList.append(p)
+            percentageList.append(',')
+        del percentageList[-1]
+        return percentageList
+        # data_details = {'res': predVal, 'away': percentageList[0], 'draw': percentageList[2], 'home': percentageList[4]}
+        # return data_details
+
+    except ValueError as e:
+        return Response(e.args[0], status.HTTP_400_BAD_REQUEST)
+
+
+
+
+
+
+
 @api_view(['GET'])
 def predictMatch(request, HomeTeam, AwayTeam):
     match = matchData.objects.filter(HomeTeam__exact=HomeTeam).filter(AwayTeam__exact=AwayTeam)
@@ -86,7 +131,7 @@ def predictMatch(request, HomeTeam, AwayTeam):
             percentageList.append(',')
         del percentageList[-1]
 
-        data_details = {'res': predVal, 'lose': percentageList[0], 'draw': percentageList[2], 'win': percentageList[4]}
+        data_details = {'res': predVal, 'away': percentageList[0], 'draw': percentageList[2], 'home': percentageList[4]}
         return HttpResponse(json.dumps(data_details))
 
     # return HttpResponse(percentageList)

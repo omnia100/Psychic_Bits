@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from PsychicBits.models import Match
 from django.shortcuts import render
+from API.views import predict_Match, predictMatchPP
+from userPrediction.views import topTen
 
 
 def index(request):
@@ -11,12 +13,17 @@ def index(request):
 
 def match(request, match_id):
     match = Match.objects.get(id=match_id)
-    context = {'match': match}
+    pred = predictMatchPP(match.HT, match.AT)
+    context = {'match': match,
+               'pred':pred}
     return render(request, 'psychicbits/match.html', context)
 
 
 def mainhome(request):
-    return render(request, 'psychicbits/mainhome.html')
+    names,scores = topTen()
+    context = {'names':names,
+               'scores':scores}
+    return render(request, 'psychicbits/mainhome.html',context)
 
 def vote(request):
     return render(request, 'psychicbits/vote.html')
@@ -28,6 +35,6 @@ def profile(request, user_id):
     # context = {'user': user}
     # return render(request, 'psychicbits/userProfile.html', context)
     return None
+
 def home(request):
-    
     return render(request, 'psychicbits/mainhome.html')
