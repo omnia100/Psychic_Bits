@@ -51,7 +51,7 @@ def log_in(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            messages.info(request, f"You are now logged in as {username}")
+            messages.error(request, f"You are now logged in as {username}")
             return redirect('/psychicbits/mainhome')
         else:
             messages.error(request, "Invalid username or password.")

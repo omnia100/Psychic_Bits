@@ -7,16 +7,16 @@ import pandas as pd
 
 @shared_task
 def Updates():
-    from API.views import predictMatchPP
-    pred = predictMatchPP('West Ham', 'Man City')
-    print(pred['draw'])
-    # row1, row2 = post_match_results_API()
-    # Update_Match_Table(row1)
-    # update_scores(row1['HomeTeam'], row1['HomeTeam'], row1['FTR'])
-    #
-    # p = Get_new_Pred(row2['HomeTeam'], row2['AwayTeam'])
-    # # p = 'H'
-    # add_pred(row2['HomeTeam'], row2['AwayTeam'], p)
+    # from API.views import predictMatchPP
+    # pred = predictMatchPP('West Ham', 'Man City')
+    # print(pred['draw'])
+    row1, row2 = post_match_results_API()
+    Update_Match_Table(row1)
+    update_scores(row1['HomeTeam'], row1['HomeTeam'], row1['FTR'])
+
+    p = Get_new_Pred(row2['HomeTeam'], row2['AwayTeam'])
+    # p = 'H'
+    add_pred(row2['HomeTeam'], row2['AwayTeam'], p)
 
 
 def post_match_results_API():
