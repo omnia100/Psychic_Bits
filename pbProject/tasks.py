@@ -3,16 +3,18 @@ from urllib.request import urlopen
 from celery import shared_task
 import pandas as pd
 
-
 @shared_task
 def Updates():
     row1, row2 = post_match_results_API()
     Update_Match_Table(row1)
+    update_scores(row1['HomeTeam'], row1['HomeTeam'], row1['FTR'])
+
     # p = Get_new_Pred(row['HomeTeam'], row['AwayTeam'])
-    p = 'A'
+
+    p = 'H'
     add_pred(row2['HomeTeam'], row2['AwayTeam'], p)
-    # update_scores()
-    # return row
+
+    # return
 
 
 def post_match_results_API():
@@ -40,8 +42,13 @@ def Update_Match_Table(row):
 
 
 
-def add_pred(h, a, p):
+def add_pred(home, away, pred):
     from PsychicBits.models import Match
-    m = Match.objects.filter(HT=h, AT=a)
+    m = Match.objects.filter(HT=home, AT=away)
     if m:
-        m.update(pred=p)
+        m.update(pred=pred)
+
+
+
+# def update_scores(home, away, result):
+#     calculateScore(,,result)

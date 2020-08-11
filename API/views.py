@@ -4,15 +4,12 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from . models import matchData
-from . serializers import matchDataSerializer
+from .models import matchData
+from .serializers import matchDataSerializer
 from rest_framework.views import exception_handler
 
 import joblib
 import pandas as pd
-
-
-
 
 """
 @api_view(['GET'])
@@ -27,61 +24,61 @@ def matchList(request, pk):
         return Response(serializer.data)
 """
 
+
 def appendFeatures(jsonObj):
-	arr=[]
-	arr.append(jsonObj[0]['AttackRateH'])
-	arr.append(jsonObj[0]['AttackRateA'])
+    arr = []
+    arr.append(jsonObj[0]['AttackRateH'])
+    arr.append(jsonObj[0]['AttackRateA'])
 
-	arr.append(jsonObj[0]['DefenceRateH'])
-	arr.append(jsonObj[0]['DefenceRateA'])
+    arr.append(jsonObj[0]['DefenceRateH'])
+    arr.append(jsonObj[0]['DefenceRateA'])
 
-	arr.append(jsonObj[0]['DGH'])
-	arr.append(jsonObj[0]['DGA'])
+    arr.append(jsonObj[0]['DGH'])
+    arr.append(jsonObj[0]['DGA'])
 
-	arr.append(jsonObj[0]['HomeRank'])
-	arr.append(jsonObj[0]['AwayRank'])
+    arr.append(jsonObj[0]['HomeRank'])
+    arr.append(jsonObj[0]['AwayRank'])
 
-	arr.append(jsonObj[0]['AvgHST'])
-	arr.append(jsonObj[0]['AvgAST'])
+    arr.append(jsonObj[0]['AvgHST'])
+    arr.append(jsonObj[0]['AvgAST'])
 
-	arr.append(jsonObj[0]['AvgHF'])
-	arr.append(jsonObj[0]['AvgAF'])
+    arr.append(jsonObj[0]['AvgHF'])
+    arr.append(jsonObj[0]['AvgAF'])
 
-	arr.append(jsonObj[0]['AvgHC'])
-	arr.append(jsonObj[0]['AvgAC'])
+    arr.append(jsonObj[0]['AvgHC'])
+    arr.append(jsonObj[0]['AvgAC'])
 
-	arr.append(jsonObj[0]['AvgHR'])
-	arr.append(jsonObj[0]['AvgAR'])
+    arr.append(jsonObj[0]['AvgHR'])
+    arr.append(jsonObj[0]['AvgAR'])
 
-	arr.append(jsonObj[0]['AvgHY'])
-	arr.append(jsonObj[0]['AvgAY'])
+    arr.append(jsonObj[0]['AvgHY'])
+    arr.append(jsonObj[0]['AvgAY'])
 
-	return arr
-
+    return arr
 
 
 @api_view(['GET'])
-def predictMatch(request,HomeTeam,AwayTeam):
-	match=matchData.objects.filter(HomeTeam__icontains=HomeTeam).filter(AwayTeam__icontains=AwayTeam)
-	serializer = matchDataSerializer(match,many=True)
-	jsonObj=serializer.data
-	features=appendFeatures(jsonObj)
+def predictMatch(request, HomeTeam, AwayTeam):
+    match = matchData.objects.filter(HomeTeam__icontains=HomeTeam).filter(AwayTeam__icontains=AwayTeam)
+    serializer = matchDataSerializer(match, many=True)
+    jsonObj = serializer.data
+    features = appendFeatures(jsonObj)
 
-	filePath='mlModel/finalize.pkl'
-	try:
-		classifier=joblib.load(filePath)
-		prediction = classifier.predict([features])[0]
-		percentage=classifier.predict_proba([features])[0]
-		percentageList=[]
-		for i in (percentage):
-			p=str(i)
-			percentageList.append(p)
-			percentageList.append(',')
-		del percentageList[-1]
+    filePath = 'mlModel/finalize.pkl'
+    try:
+        classifier = joblib.load(filePath)
+        prediction = classifier.predict([features])[0]
+        percentage = classifier.predict_proba([features])[0]
+        percentageList = []
+        for i in (percentage):
+            p = str(i)
+            percentageList.append(p)
+            percentageList.append(',')
+        del percentageList[-1]
 
-		return HttpResponse(percentageList)
+        return HttpResponse(percentageList)
 
-	except ValueError as e:
-		return Response(e.args[0], status.HTTP_400_BAD_REQUEST)
+    except ValueError as e:
+        return Response(e.args[0], status.HTTP_400_BAD_REQUEST)
 
 

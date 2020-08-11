@@ -2,7 +2,6 @@
 from django.db import models
 from PsychicBits.models import Match
 from users.models import Profile
-# Create your models here.
 
 class prediction(models.Model):
 	userID=models.ForeignKey(Profile,models.SET_NULL,blank=True,null=True,)
