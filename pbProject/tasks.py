@@ -7,14 +7,10 @@ import pandas as pd
 def Updates():
     row1, row2 = post_match_results_API()
     Update_Match_Table(row1)
-    update_scores(row1['HomeTeam'], row1['HomeTeam'], row1['FTR'])
+    # update_scores(row1['HomeTeam'], row1['HomeTeam'], row1['FTR'])
 
-    # p = Get_new_Pred(row['HomeTeam'], row['AwayTeam'])
-
-    p = 'H'
+    p = Get_new_Pred(row2['HomeTeam'], row2['AwayTeam'])
     add_pred(row2['HomeTeam'], row2['AwayTeam'], p)
-
-    # return
 
 
 def post_match_results_API():
@@ -33,14 +29,9 @@ def Update_Match_Table(row):
         m.update(FTR=row['FTR'], HT_score=row['FTHG'], AW_score=row['FTAG'])
 
 
-# def Get_new_Pred(h, a):
-#     with urlopen(f'/predict/{h}/{a}/') as response:
-#         html_response = response.read()
-#         encoding = response.headers.get_content_charset('utf-8')
-#         decoded_html = html_response.decode(encoding)
-#         return decoded_html
-
-
+def Get_new_Pred(h, a):
+    from API.views import predict_Match
+    return predict_Match(h, a)
 
 def add_pred(home, away, pred):
     from PsychicBits.models import Match
