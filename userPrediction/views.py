@@ -71,7 +71,7 @@ def calculateScore(request, matchID, result):
 def topTen(request):
 	scoreList=Profile.objects.all().order_by('-score')[:10]
 	for user in scoreList:
-		#print(user.user,' ',user.score)
+		print(user.user,' ',user.score)
 	return HttpResponse('show top 10 user')
 	
 	
