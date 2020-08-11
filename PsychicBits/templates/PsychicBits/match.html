@@ -3,36 +3,44 @@
 {% load static %}
 
 <head>
-<!--<h1>This is the match page</h1>-->
-<title>Psychic_Bits</title>
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/css/all.css' %}" rel="stylesheet"> <!--load all styles -->
-  <link rel="stylesheet"  href="css/stylesheet.min.css">
-  <link rel="stylesheet"  href="css/bootstrap.min.css">
-   
-   <!-- css -->
-  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700" rel="stylesheet">
-  <!--<link href="css/bootstrap-responsive.css" rel="stylesheet" />
-  <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-  <link href="css/jcarousel.css" rel="stylesheet" />
-  <link href="css/flexslider.css" rel="stylesheet" />-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/css/all.css' %}" rel="stylesheet"> <!--load all styles -->
-  <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/scss/all.scss' %}" rel="stylesheet"> <!--load all styles -->
-   <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/scss/all.scss' %}" rel="stylesheet"> <!--load all styles -->
-    <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/js/all.js' %}" rel="stylesheet"> <!--load all styles -->
-    <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/js/all.js' %}" rel="stylesheet"> <!--load all styles -->
-    <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/js/all.js' %}" rel="stylesheet"> <!--load all styles -->
+    <!--<h1>This is the match page</h1>-->
+    <title>Psychic_Bits</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/css/all.css' %}" rel="stylesheet">
+    <!--load all styles -->
+    <link rel="stylesheet" href="css/stylesheet.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
-  <link rel="stylesheet"  href="{% static 'psychicbits/css/all.css' %}">
-  <link id="bodybg" href="{% static 'psychicbits/bodybg/bg1.css' %}" rel="stylesheet" type="text/css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- css -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700"
+          rel="stylesheet">
+    <!--<link href="css/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
+    <link href="css/jcarousel.css" rel="stylesheet" />
+    <link href="css/flexslider.css" rel="stylesheet" />-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/css/all.css' %}" rel="stylesheet">
+    <!--load all styles -->
+    <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/scss/all.scss' %}" rel="stylesheet">
+    <!--load all styles -->
+    <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/scss/all.scss' %}" rel="stylesheet">
+    <!--load all styles -->
+    <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/js/all.js' %}" rel="stylesheet">
+    <!--load all styles -->
+    <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/js/all.js' %}" rel="stylesheet">
+    <!--load all styles -->
+    <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/js/all.js' %}" rel="stylesheet">
+    <!--load all styles -->
+
+    <link rel="stylesheet" href="{% static 'psychicbits/css/all.css' %}">
+    <link id="bodybg" href="{% static 'psychicbits/bodybg/bg1.css' %}" rel="stylesheet" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <style type="text/css">
   #myProgress {
@@ -78,107 +86,109 @@ body{
   
 }
 .row{margin-bottom: 30px;}
+
 </style>
 <body>
 <!--<h2>{{ match.id }}</h2> -->
 
 <!--*************************************************************************** -->
 <!--***************************************************************************** -->
-<div class="row visible-lg-block" >
-	<div class="col-sm-12 col-lg-push-3 " id="divd">
-		 {{match.date}} 
-	</div>
-	<div class="col-lg-5 col-lg-push-1 " id="divd">
-		{{match.HT}}  
-	</div>
-  <div class="col-lg-1 col-lg-push-1" style=" color: darkgray;" id="divd">
-     Vs
-  </div>
-<div class="col-lg-5 col-lg-push-1" id="divd">
-	 {{  match.AT}}
-</div>
+<div class="row visible-lg-block">
+    <div class="col-sm-12 col-lg-push-3 " id="divd">
+        {{match.date}}
+    </div>
+    <div class="col-lg-5 col-lg-push-1 " id="divd">
+        {{match.HT}}
+    </div>
+    <div class="col-lg-1 col-lg-push-1" style=" color: darkgray;" id="divd">
+        Vs
+    </div>
+    <div class="col-lg-5 col-lg-push-1" id="divd">
+        {{ match.AT}}
+    </div>
 </div>
 {% if match.pred %}
-<h2>{{match.pred}}</h2>
+<div id="chartContainer" style="height: 300px; width: 80%; padding-left: 10%;"></div>
 {% else %}
 <div class="row visible-lg-block">
-	<div class="col-lg-5 col-lg-push-1 "id="div" >Match Results =></div> 
-	<div class="col-lg-3 col-lg-push-1 "id="div">Soon</div>
-{% endif %}
+    <div class="col-lg-5 col-lg-push-1 " id="div">Match Results =></div>
+    <div class="col-lg-3 col-lg-push-1 " id="div">Soon</div>
+    {% endif %}
 </div>
 <!--*************************************************************************** -->
 <!--***************************************************************************** -->
 
-<div class="row visible-sm-block visible-md-block" >
-  <div class="col-sm-12 col-sm-push-3 " id="div">
-     {{match.date}} 
-  </div>
-  <div class="col-sm-5 col-sm-push-1 " id="div">
-    {{match.HT}}  
-  </div>
-  <div class="col-sm-1 col-sm-push-1" style="margin-left: 15px; color: darkgray;" id="div">
-     Vs
-  </div>
-<div class="col-sm-5 col-sm-push-1" id="div">
-   {{  match.AT}}
-</div>
+<div class="row visible-sm-block visible-md-block">
+    <div class="col-sm-12 col-sm-push-3 " id="div">
+        {{match.date}}
+    </div>
+    <div class="col-sm-5 col-sm-push-1 " id="div">
+        {{match.HT}}
+    </div>
+    <div class="col-sm-1 col-sm-push-1" style="margin-left: 15px; color: darkgray;" id="div">
+        Vs
+    </div>
+    <div class="col-sm-5 col-sm-push-1" id="div">
+        {{ match.AT}}
+    </div>
 </div>
 {% if match.pred %}
 <h2>{{match.pred}}</h2>
 {% else %}
 <div class="row visible-sm-block visible-md-block">
-  <div class="col-sm-6 col-sm-push-1 "id="div" >Match Results =></div> 
-  <div class="col-sm-3 col-sm-push-1 "id="div">Soon</div>
-{% endif %}
+    <div class="col-sm-6 col-sm-push-1 " id="div">Match Results =></div>
+    <div class="col-sm-3 col-sm-push-1 " id="div">Soon</div>
+    {% endif %}
 </div>
 <!--*************************************************************************** -->
 <!--***************************************************************************** -->
-<div class="row visible-xs-block" >
-  <div class="col-xs-12 col-xs-push-3 " id="divxs">
-     {{match.date}} 
-  </div>
-  <div class="col-xs-5 col-xs-push-1 " id="divxs">
-    {{match.HT}}  
-  </div>
-  <div class="col-xs-1 col-xs-push-1" style="margin-left: 10px; color: darkgray;" id="divxs">
-     Vs
-  </div>
-<div class="col-xs-5 col-xs-push-1" id="divxs">
-   {{  match.AT}}
-</div>
+<div class="row visible-xs-block">
+    <div class="col-xs-12 col-xs-push-3 " id="divxs">
+        {{match.date}}
+    </div>
+    <div class="col-xs-5 col-xs-push-1 " id="divxs">
+        {{match.HT}}
+    </div>
+    <div class="col-xs-1 col-xs-push-1" style="margin-left: 10px; color: darkgray;" id="divxs">
+        Vs
+    </div>
+    <div class="col-xs-5 col-xs-push-1" id="divxs">
+        {{ match.AT}}
+    </div>
 </div>
 {% if match.pred %}
-<h2>{{match.pred}}</h2>
+
+<div id="chartContainer" style="height: 300px; width: 80%; padding-left: 10%;"></div>
+
 {% else %}
 <div class="row visible-xs-block">
-  <div class="col-xs-7 col-xs-push-1 "id="divxs" >Match Results =></div> 
-  <div class="col-xs-3 col-xs-push-1 "id="divxs">Soon</div>
-{% endif %}
+    <div class="col-xs-7 col-xs-push-1 " id="divxs">Match Results =></div>
+    <div class="col-xs-3 col-xs-push-1 " id="divxs">Soon</div>
+    {% endif %}
 </div>
 <!-- Donut chart -->
-            
-            <!-- /.card -->
 
-            <div id="chartContainer" style="height: 300px; width: 80%; padding-left: 10%;"></div>
-<<<<<<< Updated upstream
-=======
-            <div class="navbar navbar-inverse navbar-fixed-bottom" style="height: 15px;"> <!-- start of footer-->
-    <div class="container"> 
-      <div class="navbar-text pull-left">
-        <p> copyright psychicbits 2020</p>
-      </div>
-      <div class="navbar-text pull-right">
-        <a href="#"><i class="fab fa-facebook-square" style="color: white;font-size: 30px; padding: 0px 0px 0px 0px; margin: 0px 0px;"></i> </a>
-        <a href="#"><i class="fab fa-twitter-square" style="color: white;font-size: 30px;"></i></a>
-        <a href="#"><i class="fab fa-google-plus-square" style="color: white;font-size: 30px;"></i></a>
-        <a href="#"><i class="fab fa-instagram-square" style="color: white;font-size: 30px;"></i></a>
-      </div>
+<!-- /.card -->
+
+<!--<div id="chartContainer" style="height: 300px; width: 80%; padding-left: 10%;"></div>-->
+
+<div class="navbar navbar-inverse navbar-fixed-bottom" style="height: 15px;"> <!-- start of footer-->
+    <div class="container">
+        <div class="navbar-text pull-left">
+            <p> copyright psychicbits 2020</p>
+        </div>
+        <div class="navbar-text pull-right">
+            <a href="#"><i class="fab fa-facebook-square"
+                           style="color: white;font-size: 30px; padding: 0px 0px 0px 0px; margin: 0px 0px;"></i> </a>
+            <a href="#"><i class="fab fa-twitter-square" style="color: white;font-size: 30px;"></i></a>
+            <a href="#"><i class="fab fa-google-plus-square" style="color: white;font-size: 30px;"></i></a>
+            <a href="#"><i class="fab fa-instagram-square" style="color: white;font-size: 30px;"></i></a>
+        </div>
     </div>
-  </div> <!-- end of footer-->
-  
->>>>>>> Stashed changes
+</div> <!-- end of footer-->
 
-            <script type="text/javascript">
+
+<script type="text/javascript">
             
 window.onload = function () {
 
@@ -194,15 +204,16 @@ var chart = new CanvasJS.Chart("chartContainer", {
     toolTipContent: "<b>{label}:</b> {y} (#percent%)",
     dataPoints: [
      
-      { y: 8, label: "Draw"},
-      { y: 20, label: "{{match.HT}}"},
-      { y: 29, label: "{{match.AT}}"}
+      { y: {{pred.2}}, label: "Draw"},
+      { y: {{pred.4}}, label: "{{match.HT}}"},
+      { y: {{pred.0}}, label: "{{match.AT}}"}
     ]
   }]
 });
 chart.render();
 
 }
+
 </script>
 
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
