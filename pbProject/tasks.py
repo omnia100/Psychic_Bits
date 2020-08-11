@@ -47,5 +47,8 @@ def add_pred(home, away, pred):
 
 
 
-# def update_scores(home, away, result):
-#     calculateScore(,,result)
+def update_scores(home, away, result):
+    from PsychicBits.models import Match
+    m = Match.objects.filter(HT=home, AT=away)
+    from userPrediction.views import calculateScore
+    calculateScore(m,result)

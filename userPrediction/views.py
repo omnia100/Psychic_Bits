@@ -46,20 +46,17 @@ def vote(request, matchID):
 
     return redirect('/psychicbits/mainhome')
 
-def calculateScore(request, matchID, result):
-    match = Match.objects.get(pk=matchID)
+def calculateScore(match, result):
+    truePredictions = prediction.objects.filter(matchID=match, vote=result)
 
-    # return queryset of matchID res filtered prediction
-    truePredictions = prediction.objects.filter(matchID__id=matchID).filter(vote=result)
+    if  truePredictions:
+        for predictionObj in truePredictions:
+            predictor = User.objects.get(pk=predictionObj.userID)
+            predictor.profile.score += 1
+            predictor.save()
 
-    if not truePredictions:
-        return HttpResponse('<h1>No true prediction</h1>')
-
-    for predictionObj in truePredictions:
-        predictor = User.objects.get(pk=predictionObj.userID)
-        predictor.profile.score += 1
-        predictor.save()
     return HttpResponse('score increased')
+
 
 def topTen():
     scoreList = Profile.objects.all().order_by('-score')[:10]
