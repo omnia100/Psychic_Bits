@@ -11,9 +11,6 @@ class Match(models.Model):
     HT_score = models.IntegerField("Home Team Score", blank=True, default=0)
     AW_score = models.IntegerField("Away Team Score", blank=True, default=0)
 
-    # HT_flag = models.ImageField()
-    # AW_flag = models.ImageField()
-
     pred = models.CharField("Model Prediction", max_length=1, blank=True)
     FTR = models.CharField('Full Time Result', max_length=1, blank=True)  # H, A, D home,away,draw4
 
