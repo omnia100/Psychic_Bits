@@ -20,10 +20,3 @@ class Match(models.Model):
             self.AT
         )
 
-
-class teamLogo(models.Model):
-    team = models.CharField(max_length=20)
-    logo = models.ImageField(blank=True, null=True)
-
-    def __str__(self):
-        return self.team
