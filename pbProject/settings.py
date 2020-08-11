@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
-
+from celery.schedules import crontab
+import pbProject.tasks
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -41,7 +42,7 @@ INSTALLED_APPS = [
     'API',
     'rest_framework',
     'userPrediction',
-    'users',
+    'users',	
 
 ]
 
@@ -131,3 +132,17 @@ STATICFILES_DIRS = [
     # os.path.join(BASE_DIR, "PsychicBits\static"),
     # os.path.join(BASE_DIR, "users\static"),
 ]
+
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = "GB"
+
+CELERY_BEAT_SCHEDULE = {
+    "Updates": {
+        "task": "pbProject.tasks.Updates",
+        "schedule": crontab(minute="*/1"),
+    },
+}

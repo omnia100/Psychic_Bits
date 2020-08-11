@@ -5,7 +5,7 @@ from django.conf.urls import url
 urlpatterns = [ 
  #path('match/<int:pk>', views.matchList),
  #path('match/<HomeTeam>/<AwayTeam>/', views.searchMatch),
- path('predict/<HomeTeam>/<AwayTeam>/', views.predictMatch),
+ path('/predict/<HomeTeam>/<AwayTeam>/', views.predictMatch),
 ]
 
 
