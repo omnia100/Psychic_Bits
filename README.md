@@ -11,10 +11,11 @@ Workflow:
 2- change directory to the project directory contains manage.py  
 3- start your local DB by migrating django models using **python manage.py makemigrations**  
    then **python manage.py migrate**  
-4- runserver on localhost using the command **python manage.py runserver**  
-5- 
-
+4- matches schedule in in "sideCodes" folder, in order to fill data into the DB, run the scripts inside the folder.  
+5- run the server on your localhost using the command **python manage.py runserver**  
+6-
 
 
 Notes:
 ---
+1- 
