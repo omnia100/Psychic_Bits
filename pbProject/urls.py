@@ -23,6 +23,6 @@ urlpatterns = [
     path('psychicbits/', include('PsychicBits.urls')),
     path('users/', include('users.urls')),
     path('',include('API.urls')),
-    path('',include('userPrediction.urls')),
+    path('psychicbits/',include('userPrediction.urls')),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

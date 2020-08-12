@@ -4,9 +4,10 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pbProject.settings")
 django.setup()
 
 import csv
+# from
 from PsychicBits.models import Match
 
-with open('E0.csv') as csvfile:
+with open('votes.csv') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         p = Match(date=row['Date'],HT=row['HomeTeam'], AT=row['AwayTeam'])
