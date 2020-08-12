@@ -8,4 +8,5 @@ Psychic Bits also provide a RESTful Api so anyone could use the predictions made
 Workflow:
 
 1- on your machine install requirements.txt
-2- 
+2- change directory to the project directory contains manage.py
+3- 
