@@ -21,6 +21,7 @@ def post_match_results_API():
             df.to_csv('mock_results.csv', index=False)
             return df.iloc[index], df.iloc[index+1]
 
+
 def Update_Match_Table(row):
     from PsychicBits.models import Match
     m = Match.objects.filter(HT=row['HomeTeam'], AT=row['AwayTeam'])

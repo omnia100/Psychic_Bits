@@ -32,6 +32,7 @@ def vote(request, matchID):
         profileObj = get_object_or_404(Profile, user=user)
 
         old = prediction.objects.filter(matchID=match, userID=profileObj)
+
         if old:
             old.delete()
 
