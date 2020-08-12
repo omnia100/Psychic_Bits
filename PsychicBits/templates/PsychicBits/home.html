@@ -66,28 +66,17 @@ body{
     <nav  class="navbar navbar-inverse navbar-top " id="nav1" role="navigation" style="margin-top: 0px;"> <!-- start of nav 1-->
     <div class="container-fluid " ><!-- start of cont 1 for lg block-->
       <div class="row"> 
-        <!--
         
-        <div class="col-sm-5 col-sm-push-0 col-xs-5 hidden-lg hidden-xs"><!-- start of title ->
-          <div class="w3-animate-fading">
-            <h1 style='margin-top: 0px; font-size: 30px;letter-spacing: -2px; color: darkgray;font-family:"Comic Sans MS", cursive, serif; font-weight: bold;'>Psychic bits</h1>
-          </div>
-        </div>
-        <div class="col-xs-5 visible-xs-block "><!-- start of title ->
-          <div class="w3-animate-fading">
-            <h1 style='margin-top: 0px; font-size: 30px;letter-spacing: -2px; color: darkgray;font-family:"Comic Sans MS", cursive, serif; font-weight: bold;'>Psychic bits</h1>
-          </div>
-        </div>-->
     {% if user.is_authenticated %}
-      <div class="col-lg-12 col-xs-6 col-lg-push-0 visible-lg-block"><!-- start of title -->
+      <div class="col-lg-12 col-xs-12 col-lg-push-0 "><!-- start of title -->
           <div class="w3-animate-fading">
-            <h1 style='margin-top: 0px; font-size: 30px;letter-spacing: 7px; color: darkgray;font-family:"Comic Sans MS", cursive, serif; font-weight: bold;'>Psychic bits</h1>
+            <h1 style='margin-top: 0px; font-size: 30px;letter-spacing: 7px; color: darkgray;font-family:"Comic Sans MS", cursive, serif; font-weight: bold;'>Psychic Bits</h1>
           </div>
         </div>
     {% else %}
       <div class="col-lg-7 col-xs-6 col-xs-push-0 col-lg-push-0 "><!-- start of title -->
           <div class="w3-animate-fading">
-            <h1 style='margin-top: 0px; font-size: 30px;letter-spacing: 7px; color: darkgray;font-family:"Comic Sans MS", cursive, serif; font-weight: bold;'>Psychic bits</h1>
+            <h1 style='margin-top: 0px; font-size: 20px;letter-spacing: 5px; color: darkgray;font-family:"Comic Sans MS", cursive, serif; font-weight: bold;'>Psychic Bits</h1>
           </div>
         </div>
       <div class="col-lg-1 col-lg-push-0 col-sm-3 col-xs-2 col-sm-push-0 col-md-push-2"style="margin-left:10px; "> <!-- start of signup of lg con-->
@@ -112,7 +101,7 @@ body{
     </tr>
 {% for match in matches_list %}
 
-<tr style="font-size: 18px;" onload="fun2({{match.date}})">
+<tr style="font-size: 18px;" >
     {% if "fun2() >= {{match.date}}"  %}
         <td ><a href="/psychicbits/match{{match.id}}"> {{match.date}} </a></td>
         <td>{{match.HT}}</td>

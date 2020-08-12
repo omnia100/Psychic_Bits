@@ -1,3 +1,4 @@
+{% if user.is_authenticated %}
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
@@ -5,33 +6,30 @@
 
     <title>Psycic Bits</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{% static 'users\profile.css'%}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link href="fontawesome-free-5.13.0-web/css/all.css" rel="stylesheet"> <!--load all styles -->
-    <link rel="stylesheet" href="css/stylesheet.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/css/all.css' %}" rel="stylesheet"> <!--load all styles -->
+  <link rel="stylesheet"  href="css/stylesheet.min.css">
+  <link rel="stylesheet"  href="css/bootstrap.min.css">
+   
+   <!-- css -->
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/css/all.css' %}" rel="stylesheet"> <!--load all styles -->
+  <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/scss/all.scss' %}" rel="stylesheet"> <!--load all styles -->
+   
+    <link href="{% static 'psychicbits/fontawesome-free-5.13.0-web/js/all.js' %}" rel="stylesheet"> <!--load all styles -->
+    
 
-    <!-- css -->
-    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700"
-          rel="stylesheet">
-    <!--<link href="css/bootstrap-responsive.css" rel="stylesheet" />
-    <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-    <link href="css/jcarousel.css" rel="stylesheet" />
-    <link href="css/flexslider.css" rel="stylesheet" />-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link href="fontawesome-free-5.13.0-web/css/all.css" rel="stylesheet"> <!--load all styles -->
-    <link href="fontawesome-free-5.13.0-web/scss/all.scss" rel="stylesheet"> <!--load all styles -->
-    <link href="fontawesome-free-5.13.0-web/js/all.js" rel="stylesheet"> <!--load all styles -->
-
-    <link rel="stylesheet" href="{% static 'psychicbits/css/all.css' %}">
-    <link id="bodybg" href="{% static 'psychicbits/bodybg/bg1.css' %}" rel="stylesheet" type="text/css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <style type="text/css">
+  <link rel="stylesheet"  href="{% static 'psychicbits/css/all.css' %}">
+  <link id="bodybg" href="{% static 'psychicbits/bodybg/bg1.css' %}" rel="stylesheet" type="text/css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <style type="text/css">
    .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
@@ -100,18 +98,7 @@ button:hover, a:hover {
   padding: 10px 20px;
 }
 
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 20px;}
-  .sidebar a {font-size: 18px;}
-}
-.navbar-collapse{
-  color: lightgray;
 
-}
-#d1{color: darkgray;}
-.dropdown-hover .dropdown-content {
-  display: block; 
-}
 #d1-content a:hover {
   background-color: #ddd;}
   @keyframes mymove {
@@ -127,42 +114,17 @@ h3::first-letter{
 .h1{
   letter-spacing: 100px; 
 }
-.collapse dropdown-menu:hover{ color: darkgray;display: block;  background-color: #ddd;}
-
-  
-    
-    body{
-      
-    }
 
 
     </style>
 </head>
 <body>
+  
 <nav class="navbar navbar-inverse navbar-top " id="nav1" role="navigation" style="margin-top: 20px;">
     <!-- start of nav 1-->
-    <div class="container-fluid visible-lg-block"><!-- start of cont 1 for lg block-->
+    <div class="container-fluid hidden-xs"><!-- start of cont 1 for lg block-->
         <div class="row">                 <!-- start of row 1 in cont 1 -->
-            <div class="dropdown col-lg-1 "> <!-- start of dropdown 10 users 1-->
-                <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"
-                        style="color: black; background-color: lightgray;font-weight: bold;">
-                    Top 10 Users <i class="fas fa-trophy"></i>
-                </button>
-                <ul class="dropdown-menu" role="menu" style="color: white;background-color: white;">
-                    <li><a class="dropdown-item-text " href="#">Just text 1</a></li>
-                    <li><a class="dropdown-item-text" href="#">Just text 2</a></li>
-                    <li><a class="dropdown-item-text" href="#">Just Text 3</a></li>
-                    <li><a class="dropdown-item-text" href="#">Just Text 4</a></li>
-                    <li><a class="dropdown-item-text" href="#">Just Text 5</a></li>
-                    <li><a class="dropdown-item-text" href="#">Just Text 6</a></li>
-                    <li><a class="dropdown-item-text" href="#">Just Text 7</a></li>
-                    <li><a class="dropdown-item-text" href="#">Just Text 8</a></li>
-                    <li><a class="dropdown-item-text" href="#">Just Text 9</a></li>
-                    <li><a class="dropdown-item-text" href="#">Just Text 10</a></li>
-                </ul>
-            </div> <!-- end of dropdown 10 users 1-->
-
-            <div class="col-lg-5 col-lg-push-3 visible-lg-block"><!-- start of title -->
+            <div class="col-lg-12 col-lg-push-0 "><!-- start of title -->
                 <div class="w3-animate-fading">
                     <h1 style='margin-top: 0px; font-size: 50px;letter-spacing: 10px; color: white;font-family:"Comic Sans MS", cursive, serif; font-weight: bold; '>
                         PSYChiC BiTs</h1>
@@ -175,150 +137,44 @@ h3::first-letter{
     </div><!-- end of cont 1 for lg block-->
     <!--*************************************************************************** -->
     <!--***************************************************************************** -->
-    <div id="xs" class="container-fluid visible-xs-block"> <!-- start of cont xs -->
-        <div class="row "><!-- start of row  -->
-            <div class=" col-xs-11 col-xs-push-2"><!-- start of name -->
-                <div class="w3-animate-fading">
-                    <h1 style='font-size: 35px; color: white;font-family: "Comic Sans MS", cursive, serif; font-weight: bold; '>
-                        PSYChiC BiTs</h1>
-                </div>
-            </div><!-- end of name -->
-
-            <div class="navbar "> <!-- start button 1 of collapse in con 2 xs -->
-                <button class="navbar-toggle  " type="button " data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="true" aria-label="Toggle navigation">
-                    <!-- start button of collapse in con 2 xs -->
-                    <span class="icon-bar"> </span>
-                    <span class="icon-bar"> </span>
-                    <span class="icon-bar"> </span>
-                </button><!-- end button of collapse in con 2 xs -->
-
-                <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                    <!-- start of collapse in con 2 xs -->
-                    <ul class="navbar-nav">
-
-                        <li class="nav-item dropdown">
-                            <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"
-                                    style="color: black; background-color: lightgray;font-weight: bold;">Top 10 Users <i
-                                    class="fas fa-trophy"></i>
-                            </button>
-                            <div class="dropdown-menu w3-hoverable" style="color: white;background-color: white;">
-
-                                <a class="dropdown-item-text" href="#">Just Text 10</a>
-                            </div>
-                        </li>
-                        <br>
-
-                    </ul>
-                </div>  <!-- end of collapse in con 2 xs -->
-            </div> <!-- end button 1 of collapse in con 2 xs -->
-            <div class="navbar col-xs-4 col-xs-push-6"> <!-- start button 2 of collapse in con 2 xs -->
-                <button class="navbar-toggle " type="button" data-toggle="collapse" data-target="#sidbar"
-                        aria-controls="sidbar" aria-expanded="true" aria-label="Toggle navigation">
-                    <span class="icon-bar"> </span>
-                    <span class="icon-bar"> </span>
-                    <span class="icon-bar"> </span>
-                </button><!-- end button 2 of collapse in con 2 xs -->
-                <div class="collapse navbar-collapse " id="sidbar"> <!-- ***-->
-                    <ul class="navbar-nav ">
-                        <li class="active"><a href="/psychicbits/mainhome"> <i class="fa fa-fw fa-home"></i> Home</a>
-                        </li>
-                        <li><a href="#services"><i class="fa fa-fw fa-user"></i> My Profile</a></li>
-                        <li>
-                            <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"
-                                    style="color: black; background-color: lightgray;font-weight: bold;font-size:15px;">
-                                <i class="fas fa-futbol" style="font-size: 18px; color:#222 ;"></i> Results
-                            </button>
-                            <div class="dropdown-menu"
-                                 style="color: black;background-color: lightgray; font-size:8px;width: 15px">
-                                <a class="dropdown-item-text" href="#"><h5>Pre Matches</h5></a>
-                                <a class="dropdown-item-text" href="/psychicbits/results"><h5> Next Matches</h5></a>
-                            </div><!-- end of dropdown results 1-->
-                        </li>
-                    </ul>
-                </div><!-- ***-->
-            </div><!-- end button 2 of collapse in con 2 xs -->
-
-        </div><!-- end of row -->
-    </div><!-- end of cont xs -->
+    
     <!--*************************************************************************** -->
     <!--***************************************************************************** -->
-    <div class="container-fluid visible-md-block visible-sm-block "> <!-- start of cont sm-md -->
+    <div class="container-fluid  visible-xs-block "> <!-- start of cont sm-md -->
         <div class="row"><!-- start of row 1 in sm md cont -->
-            <div class="dropdown col-sm-1 "> <!-- start of dropdown 10 users 1 in sm md cont-->
-                <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"
-                        style="color: black; background-color: lightgray;font-weight: bold;padding: 3px 3px;">Top 10
-                    Users <i class="fas fa-trophy"></i>
-                </button>
-                <div class="dropdown-menu" style="color: white;background-color: white;">
-                    <a class="dropdown-item-text " href="#">Just text 1</a>
-                    <a class="dropdown-item-text" href="#">Just text 2</a>
-                    <a class="dropdown-item-text" href="#">Just Text 3</a>
-                    <a class="dropdown-item-text" href="#">Just Text 4</a>
-                    <a class="dropdown-item-text" href="#">Just Text 5</a>
-                    <a class="dropdown-item-text" href="#">Just Text 6</a>
-                    <a class="dropdown-item-text" href="#">Just Text 7</a>
-                    <a class="dropdown-item-text" href="#">Just Text 8</a>
-                    <a class="dropdown-item-text" href="#">Just Text 9</a>
-                    <a class="dropdown-item-text" href="#">Just Text 10</a>
-                </div>
-            </div> <!-- end of dropdown 10 users 1 in sm md cont-->
-
-            <div class="col-sm-7 col-sm-push-2"><!-- start of title -->
+            <div class="col-xs-12 "><!-- start of title -->
                 <div class="w3-animate-fading">
                     <h1 style='padding-left: 20px; font-size: 40px; color: white;font-family: "Comic Sans MS", cursive, serif; font-weight: bold; '>
                         PSYChiC BiTs</h1>
                 </div>
             </div><!-- end of title -->
-
         </div>  <!-- end of row 1 in sm md cont-->
-
-
     </div><!-- end of cont sm-md --></nav>
 
-<div class="w3-sidebar w3-bar-block w3-animate-left hidden-xs col-sm-2"
-     style=" color: black; font-weight: bold; display:none;z-index:5 " id="mySidebar">
-    <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
-    <a href="/psychicbits/mainhome" style="font-size: 20px; color:#111 ;" class="active"> <i
-            class="fa fa-fw fa-home"></i> Home</a><br>
-    <a href="/psychicbits/user/{{user.id}}" style="font-size: 25px; color:#111 ;"><i class="fa fa-fw fa-user"></i> My
-        Profile</a><br>
-    <div class="dropdown col-sm-1 "> <!-- start of dropdown results 1-->
-        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"
-                style="color: black; background-color: lightgray;font-weight: bold;font-size:20px;"><i
-                class="fas fa-futbol" style="font-size: 20px; color:#111 ;"></i> Results
-        </button>
-        <div class="dropdown-menu" style="color: black;background-color: darkgray; font-size:3px; ">
-            <a class="dropdown-item-text" href=""><h4><b> Pre Matches</b></h4></a>
-            <a class="dropdown-item-text" href="/psychicbits/results"><h4><b>Next Matches</b></h4></a>
-        </div>
-    </div> <!-- end of dropdown results 1-->
-</div> <!-- end of sidebar -->
+
 <!--*************************************************************************** -->
 <!--***************************************************************************** -->
-<div class="w3-overlay w3-animate-opacity hidden-xs" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
-<!-- sidebar Content -->
-<div>
-    <button class="w3-button w3-white w3-xxlarge hidden-xs" onclick="w3_open()">&#9776;</button>
-</div>
-<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 
 
-<h1>Matches Of ToDay</h1>
+<h1>Put Your Prediction<i class="fas fa-laugh-wink" style="color:orangered; "></i></h1>
 
-<form action="uvote/{{nextmatch.pk}}" method="post">
-    {% csrf_token %}
-    <label for="browser">Home: {{nextmatch.HT}} </label>
+  <form action="uvote/{{nextmatch.pk}}" method="post" style="widows: 50%;">
+    {% csrf_token %}<br>
+    <label for="browser"style="font-size: 20px;margin-top: 10px;">HT : {{nextmatch.HT}} </label>
     <input list="browsers" name="browser" id="browser">
     <datalist id="browsers">
         <option value="H">
         <option value="A">
         <option value="D">
     </datalist>
-    Away: {{nextmatch.AT}}
-    <input type="submit">
+      <label for="browser"style="font-size: 20px;margin-top: 10px;">AT : {{nextmatch.AT}}  </label>      
+         <input type="submit" style="height: 50px;width: 80px;background-color:orangered;">
+</div>
+    </div>
+   
 </form>
+
+
 
 
 <div class="navbar navbar-inverse navbar-fixed-bottom" style="height: 15px;"> <!-- start of footer-->
@@ -363,3 +219,5 @@ function w3_close() {
 </body>
 
 </html>
+{% else %}
+{% endif %}

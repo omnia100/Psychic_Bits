@@ -160,40 +160,38 @@ h3::first-letter{
           </div>
         </div>
         
-        <div class="dropdown col-sm-1 "> <!-- start of dropdown 10 users 1-->        
+        <div class="dropdown col-sm-1 col-lg-push-0 "> <!-- start of dropdown 10 users 1-->        
                  <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: darkgray; font-weight: bold;font-size:19px;margin-right: 7px;">
                   Top 10 Users <i class="fas fa-trophy"></i> 
                  </button>
                  <ul class="dropdown-menu" role ="menu" style="color: white;background-color: darkgray; font-size: 20px;">
-                  <li><a class="dropdown-item-text " href="#">{{names.0}} : {{scores.0}}</a></li>
-                  <li><a class="dropdown-item-text " href="#">{{names.1}} : {{scores.1}}</a></li>
-                  <li><a class="dropdown-item-text " href="#">{{names.2}} : {{scores.2}}</a></li>
-                  <li><a class="dropdown-item-text " href="#">{{names.3}} : {{scores.3}}</a></li>
-                  <li><a class="dropdown-item-text " href="#">{{names.4}} : {{scores.4}}</a></li>
-                  <li><a class="dropdown-item-text " href="#">{{names.5}} : {{scores.5}}</a></li>
-                  <li><a class="dropdown-item-text " href="#">{{names.6}} : {{scores.6}}</a></li>
-                  <li><a class="dropdown-item-text " href="#">{{names.7}} : {{scores.7}}</a></li>
-                  <li><a class="dropdown-item-text " href="#">{{names.8}} : {{scores.8}}</a></li>
-                  <li><a class="dropdown-item-text " href="#">{{names.9}} : {{scores.9}}</a></li>
+                  <li><a class="dropdown-item-text " href="#">{{names.0}}: {{scores.0}}</a></li>
+                  <li><a class="dropdown-item-text " href="#">{{names.1}}: {{scores.1}}</a></li>
+                  <li><a class="dropdown-item-text " href="#">{{names.2}}: {{scores.2}}</a></li>
+                  <li><a class="dropdown-item-text " href="#">{{names.3}}: {{scores.3}}</a></li>
+                  <li><a class="dropdown-item-text " href="#">{{names.4}}: {{scores.4}}</a></li>
+                  <li><a class="dropdown-item-text " href="#">{{names.5}}: {{scores.5}}</a></li>
+                  <li><a class="dropdown-item-text " href="#">{{names.6}}: {{scores.6}}</a></li>
+                  <li><a class="dropdown-item-text " href="#">{{names.7}}: {{scores.7}}</a></li>
+                  <li><a class="dropdown-item-text " href="#">{{names.8}}: {{scores.8}}</a></li>
+                  <li><a class="dropdown-item-text " href="#">{{names.9}}: {{scores.9}}</a></li>
 
                  </ul>
                 </div> <!-- end of dropdown 10 users 1-->
-                <div class="dropdown col-lg-1  col-sm-2 col-sm-push-2 col-md-push-1" style="margin-right:5px;"> <!-- start of dropdown 10 users 1-->        
-                         <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="color: darkgray; font-weight: bold;font-size:19px;">Matches<i class="fas fa-futbol"></i>
-                         </button>
-                         <ul class="dropdown-menu" role ="menu" style="color: white;background-color: darkgray; font-size: 20px;">
-                             <li><a class="dropdown-item-text"href="/psychicbits/results"><b>Next Matches</b></a></li>
-                         </ul>
-                        </div> <!-- end of dropdown 10 users 1-->
+                <div class=" col-lg-2 col-lg-push-1 col-sm-3 col-sm-push-2 col-md-push-2"  style="margin-right:45px;"> <!-- start of dropdown 10 users 1-->        
+                  <a type="button" href="/psychicbits/results" class="btn btn-link " style="color: darkgray; font-weight: bold;font-size:19px;"><i class="fas fa-futbol"></i>
+                          Matches  
+                  </a>
+                </div> <!-- end of dropdown 10 users 1-->
                         
   {% if user.is_authenticated %}
         <!--<div class="col-lg-1 col-lg-push-1 col-sm-push-2 col-sm-1" style=" font-size: 17px;">
            <button type="button" class="btn btn-link btn-lg " style="margin-right:21px; "><a href="psychicbits/mainhome"></a><i class="fa fa-fw fa-home"></i><b>Home</b></button>
         </div>-->
-        <div class="col-sm-2 col-lg-push-1 col-sm-push-1 col-md-push-2" style="margin-left:10px;">
+        <div class="col-sm-2 col-lg-push-0 col-sm-push-1 col-md-push-2" style="margin-left:0px;">
           <button type="button" class="btn btn-link btn-lg active"><a href="/users/{{user.username}}"style="color:darkgray;"><i class="fa fa-fw fa-user"></i><b> {{user.username}} Profile</a></b></button>  
         </div>
-         <div class="col-sm-1 col-lg-push-1 col-md-push-3 col-sm-push-2"style="margin-left:90px;">
+         <div class="col-sm-2 col-lg-1 col-lg-push-0 col-md-push-3 col-sm-push-2"style="margin-left:0px;">
               <button type="button" class="btn btn-link btn-lg" ><i class="fas fa-sign-out-alt"></i><a href='/users/logout' style="color: darkgray;">Log Out</a></button>
         </div>
       </div>
@@ -201,10 +199,10 @@ h3::first-letter{
         <!--  <div class="col-lg-1 col-lg-push-2 col-sm-push-3 col-sm-1 " style=" font-size: 16px;">
            <button type="button" class="btn btn-link btn-lg " style="margin-right:23px; "><a href="psychicbits/mainhome"></a><i class="fa fa-fw fa-home"></i><b>Home</b></button>
         </div>       -->
-          <div class="col-lg-1 col-lg-push-2 col-sm-2 col-sm-push-3 col-md-push-4"style="margin-left:10px; "> <!-- start of signup of lg con-->
+          <div class="col-lg-1 col-lg-push-1 col-sm-3 col-sm-push-1 col-md-push-1"style="margin-left:10px; "> <!-- start of signup of lg con-->
             <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#myModal" > <i class="fas fa-user-plus"></i> Sign Up</button>
           </div>            <!-- end of signin of lg con-->
-          <div class="col-lg-1 col-lg-push-3 col-sm-2 col-sm-push-3 col-md-push-5" style="margin-left:0px;">           <!-- start of signin of lg con-->
+          <div class="col-lg-1 col-lg-push-1 col-sm-2 col-sm-push-1 col-md-push-2" style="margin-left:0px;">           <!-- start of signin of lg con-->
               <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#mySignin" ><i class="fas fa-sign-in-alt"></i> Sign iN</button>
           </div>  <!--end of signin of lg con-->
   {% endif %}
@@ -234,24 +232,32 @@ h3::first-letter{
                     <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" ><b>Top 10 Users</b><i class="fas fa-trophy"style="font-size: 20px; color:darkgray ;"></i>
                     </button>
                     <div class="dropdown-menu w3-hoverable" style="color: darkgray;background-color: darkgray;">
-                      <a class="dropdown-item-text"href="#">Just Text 10</a>
+                      <a class="dropdown-item-text"href="#">{{names.0}}: {{scores.0}}</a>
+                      <a class="dropdown-item-text"href="#">{{names.1}}: {{scores.1}}</a>
+                      <a class="dropdown-item-text"href="#">{{names.2}}: {{scores.2}}</a>
+                      <a class="dropdown-item-text"href="#">{{names.3}}: {{scores.3}}</a>
+                      <a class="dropdown-item-text"href="#">{{names.4}}: {{scores.4}}</a>
+                      <a class="dropdown-item-text"href="#">{{names.5}}: {{scores.5}}</a>
+                      <a class="dropdown-item-text"href="#">{{names.6}}: {{scores.6}}</a>
+                      <a class="dropdown-item-text"href="#">{{names.7}}: {{scores.7}}</a>
+                      <a class="dropdown-item-text"href="#">{{names.8}}: {{scores.8}}</a>
+                      <a class="dropdown-item-text"href="#">{{names.9}}: {{scores.9}}</a>
+
                     </div>
                   </li><br>
                   <li>
-                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" ><i class="fas fa-futbol" style="font-size: 20px; color:darkgray ;"></i><b>Results</b>
-                    </button>
-                    <div class="dropdown-menu" style="color: black;background-color: darkgray; font-size:8px;width: 15px">
-                      <a class="dropdown-item-text"href="#"><h5>Pre Matches</h5></a>
-                      <a class="dropdown-item-text" href="/psychicbits/results"><h5> Next Matches</h5></a>
-                    </div><!-- end of dropdown results 1-->
+                     <!-- start of dropdown 10 users 1-->        
+                  <a type="button" href="/psychicbits/results" class="btn btn-link " style="color: darkgray; font-weight: bold;font-size:19px;"><i class="fas fa-futbol"></i> 
+                          Matches </a>
+               <!-- end of dropdown 10 users 1-->
                   </li>
 
       {% if user.is_authenticated %}
-            
-                  <li><a href="/users/profile"><i class="fa fa-fw fa-user"></i>{{user.username}}Profile</a></li>
+                    
+                  <li><a href="/users/profile"style="color: darkgray; font-weight: bold;font-size:19px;"><i class="fa fa-fw fa-user"></i>{{user.username}}Profile</a></li>
                   <li>
                     <div class="col-xs-2 col-lg-push-1">
-                      <button type="button" class="btn btn-link btn-lg" ><i class="fas fa-sign-out-alt"></i><a href='/users/logout' style="color: darkgray;">Log Out</a></button>
+                      <button type="button" class="btn btn-link btn-lg" ><i class="fas fa-sign-out-alt"></i><a href='/users/logout' style="color: darkgray; font-weight: bold;font-size:19px;">Log Out</a></button>
                     </div>
                   </li>
       {% else %} 
@@ -297,7 +303,7 @@ h3::first-letter{
               
               <div class="form-group">
                 <label class="control-label col-sm-4 col-xs-5" for="password1">Password</label>
-                <input type="password" id="password1" name="password1" pattern="[A-Za-z(0-9)+]{8}" title="min 8 mix of letters & numbers" minlength="8"  placeholder="Password.." class="control-group"style=" border-radius: 7px;font-style:oblique;"  required>
+                <input type="password" id="password1" name="password1"  minlength="8"  placeholder="Password.." class="control-group"style=" border-radius: 7px;font-style:oblique;"  required>
               </div>
               <div class="form-group">
                 <label class="control-label col-sm-4 col-xs-5" for="password2">Confirm Password</label>

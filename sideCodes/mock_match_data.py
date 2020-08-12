@@ -1,5 +1,5 @@
 import sys, os, django
-sys.path.append(r"C:\Users\Omnia\Documents\GitHub\pbProject")
+sys.path.append(r"C:\Users\AIDa_MAhmoud\Documents\GitHub\Psychic_Bits")
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pbProject.settings")
 django.setup()
 
