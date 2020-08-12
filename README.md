@@ -9,8 +9,10 @@ Workflow:
 ---
 1- on your machine install requirements.txt (prefered to install on a venv)  
 2- change directory to the project directory contains manage.py  
-3- runserver on localhost using the command **python manage.py runserver**  
-4- 
+3- start your local DB by migrating django models using **python manage.py makemigrations**  
+   then **python manage.py migrate**  
+4- runserver on localhost using the command **python manage.py runserver**  
+5- 
 
 
 
