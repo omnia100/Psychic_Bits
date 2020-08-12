@@ -6,13 +6,13 @@ from API.views import predict_Match, predictMatchPP
 from userPrediction.views import topTen
 
 
-def index(request):
+def index(request):#table
     matches_list = Match.objects.all()
     context = {'matches_list': matches_list}
     return render(request, 'psychicbits/home.html', context)
 
 
-def match(request, match_id):
+def match(request, match_id):#show prediction 
     match = Match.objects.get(id=match_id)
     pred = predictMatchPP(match.HT, match.AT)
     context = {'match': match,
@@ -32,13 +32,6 @@ def vote(request):
     context={'nextmatch':m}
     return render(request, 'psychicbits/vote.html',context)
 
-
-
-def profile(request, user_id):
-    # user = User.objects.get(pk=user_id)
-    # context = {'user': user}
-    # return render(request, 'psychicbits/userProfile.html', context)
-    return None
 
 def home(request):
     return render(request, 'psychicbits/mainhome.html')

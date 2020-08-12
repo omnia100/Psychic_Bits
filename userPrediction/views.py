@@ -14,18 +14,12 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
 
-# Create your views here.
-
-
 def showPrediction(prof):
     predict = prediction.objects.filter(userID=prof)
     return predict
 
-# if request.method == 'GET':
-#     serializer = predictionSerializer(predict)
-#     return Response(serializer.data)
 
-# vote/<int:matchID>/
+
 @login_required(login_url='psychicbits/mainhome.html')
 def vote(request, matchID):
     if request.method == 'POST':
@@ -46,6 +40,8 @@ def vote(request, matchID):
 
     return redirect('/psychicbits/mainhome')
 
+
+
 def calculateScore(match, result):
     truePredictions = prediction.objects.filter(matchID=match, vote=result)
 
@@ -56,6 +52,7 @@ def calculateScore(match, result):
             predictor.save()
 
     return HttpResponse('score increased')
+
 
 def topTen():
     scoreList = Profile.objects.all().order_by('-score')[:10]
