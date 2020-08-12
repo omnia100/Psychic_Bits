@@ -9,7 +9,7 @@ Psychic Bits also provide a RESTful Api so anyone could use the predictions made
 pre-requist:
 ---
 1- on your machine install requirements.txt (prefered to install on a venv)  
-2- download Redis 2.8+.
+2- download Redis 2.8+.  
 3- start your local DB by migrating django models using **python manage.py makemigrations**  
    then **python manage.py migrate**  
 
