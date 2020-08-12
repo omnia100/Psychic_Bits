@@ -9,7 +9,7 @@ Workflow:
 ---
 1- on your machine install requirements.txt (prefered to install on a venv)  
 2- change directory to the project directory contains manage.py  
-3- runserver on localhost using the command "python manage.py runserver"
+3- runserver on localhost using the command **python manage.py runserver**  
 4- 
 
 
