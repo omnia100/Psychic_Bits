@@ -51,12 +51,11 @@ def calculateScore(match, result):
 
     if  truePredictions:
         for predictionObj in truePredictions:
-            predictor = User.objects.get(pk=predictionObj.userID)
-            predictor.profile.score += 1
+            predictor = predictionObj.userID
+            predictor.score += 1
             predictor.save()
 
     return HttpResponse('score increased')
-
 
 def topTen():
     scoreList = Profile.objects.all().order_by('-score')[:10]
