@@ -4,7 +4,7 @@ asgiref==3.2.10
 billiard==3.6.3.0
 celery==4.4.7
 cffi==1.14.1
-Django==3.1
+Django==3.1.8
 django-extensions==3.0.5
 django-reset-migrations==0.4.0
 djangorestframework==3.11.0
